@@ -1,0 +1,30 @@
+{
+  "name": "@viamrobotics/js-config",
+  "private": true,
+  "packageManager": "pnpm@8.1.0",
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  },
+  "license": "Apache-2.0",
+  "type": "module",
+  "scripts": {
+    "all": "concurrently -g pnpm:check-*",
+    "check-format": "echo \"not implemented\"",
+    "check-lint": "echo \"not implemented\"",
+    "check-types": "echo \"not implemented\"",
+    "format": "echo \"not implemented\""
+  },
+  "dependencies": {
+    "@viamrobotics/eslint-config": "workspace:*",
+    "@viamrobotics/prettier-config": "workspace:*",
+    "@viamrobotics/typescript-config": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "concurrently": "^8.0.1",
+    "eslint": "^8.37.0",
+    "prettier": "^2.8.7",
+    "typescript": "^5.0.2"
+  }
+}

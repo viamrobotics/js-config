@@ -1,0 +1,8 @@
+{
+  "extends": "@viamrobotics/typescript-config",
+  "compilerOptions": {
+    "types": ["node"],
+    "noEmit": true
+  },
+  "include": ["./.*", "./**/*"]
+}

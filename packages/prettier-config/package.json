@@ -1,0 +1,25 @@
+{
+  "name": "@viamrobotics/prettier-config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0",
+  "description": "Common Prettier configuration for Viam projects.",
+  "exports": {
+    ".": "./base.cjs",
+    "./svelte": "./svelte.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viamrobotics/js-config.git",
+    "directory": "packages/prettier-config"
+  },
+  "keywords": [
+    "prettier",
+    "prettierconfig"
+  ],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "prettier": ">=2 <3"
+  }
+}

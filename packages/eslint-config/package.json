@@ -1,0 +1,24 @@
+{
+  "name": "@viamrobotics/eslint-config",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.0.0",
+  "description": "Common ESLint configuration for Viam projects.",
+  "exports": {
+    ".": "./base.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viamrobotics/js-config.git",
+    "directory": "packages/eslint-config"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "eslint": ">=8 <9"
+  }
+}
