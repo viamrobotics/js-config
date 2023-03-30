@@ -12,7 +12,7 @@
     "all": "concurrently -g pnpm:check-*",
     "check-format": "echo \"not implemented\"",
     "check-lint": "echo \"not implemented\"",
-    "check-types": "echo \"not implemented\"",
+    "check-types": "tsc",
     "format": "echo \"not implemented\""
   },
   "dependencies": {
