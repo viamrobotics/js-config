@@ -21,7 +21,7 @@ jobs:
         run: pnpm all
 
   publish:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/ci-publish' }}
     needs: [check]
     runs-on: ubuntu-latest
     steps:
@@ -29,6 +29,8 @@ jobs:
 
       - name: 'Install 🔧'
         uses: ./.github/actions/setup
+        with:
+          registry-url: 'https://registry.npmjs.org'
 
       - name: 'Configure Git for publish 🌴'
         run: |
