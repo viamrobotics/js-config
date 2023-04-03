@@ -5,6 +5,7 @@
   },
   "version": "0.0.1",
   "description": "Common Prettier configuration for Viam projects.",
+  "types": "./base.d.cts",
   "exports": {
     ".": {
       "types": "./base.d.cts",
