@@ -12,7 +12,7 @@
     "all": "concurrently -g pnpm:check-*",
     "check-format": "pnpm run _prettier-base --check",
     "check-lint": "eslint \"**/*.@(js|cjs|ts)\"",
-    "check-types": "echo \"not implemented\"",
+    "check-types": "tsc",
     "format": "pnpm run _prettier-base --write",
     "_prettier-base": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\""
   },
