@@ -5,8 +5,15 @@
   },
   "version": "0.0.1",
   "description": "Common ESLint configuration for Viam projects.",
+  "types": "./base.d.cts",
   "exports": {
-    ".": "./base.cjs"
+    ".": {
+      "types": "./base.d.cts",
+      "default": "./base.cjs"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc"
   },
   "repository": {
     "type": "git",

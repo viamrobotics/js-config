@@ -6,8 +6,13 @@
   "version": "0.0.1",
   "description": "Common Prettier configuration for Viam projects.",
   "exports": {
-    ".": "./base.cjs",
-    "./svelte": "./svelte.cjs"
+    ".": {
+      "types": "./base.d.cts",
+      "default": "./base.cjs"
+    }
+  },
+  "scripts": {
+    "check-types": "tsc"
   },
   "repository": {
     "type": "git",

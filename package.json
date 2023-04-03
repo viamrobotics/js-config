@@ -12,7 +12,8 @@
     "all": "concurrently -g pnpm:check-*",
     "check-format": "pnpm run _prettier-base --check",
     "check-lint": "eslint \"**/*.@(js|cjs|ts)\"",
-    "check-types": "tsc",
+    "check-types-node": "tsc",
+    "check-types-packages": "pnpm run -r --aggregate-output check-types",
     "format": "pnpm run _prettier-base --write",
     "_prettier-base": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\""
   },

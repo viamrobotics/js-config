@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     // use import/export and legacy node resolution logic
+    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
