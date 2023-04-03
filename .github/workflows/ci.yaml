@@ -26,6 +26,7 @@ jobs:
     needs: [check]
     runs-on: ubuntu-latest
     permissions:
+      # write permission required to push tags
       contents: write
 
     steps:
