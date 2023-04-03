@@ -3,7 +3,7 @@
 set -e
 
 # publish all unpublished versions in the workspace
-pnpm publish --recursive --report-summary --dry-run --publish-branch="ci-publish"
+pnpm publish --recursive --report-summary
 
 # read published packages
 tags=$(jq -r ".publishedPackages[] | .name + \"@\" + .version" < pnpm-publish-summary.json)
