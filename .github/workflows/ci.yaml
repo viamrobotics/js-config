@@ -13,7 +13,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: 'Install 🔧'
         uses: ./.github/actions/setup
+
       - name: 'Run checks ✅'
         run: pnpm all
+
+  publish:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: [check]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 'Install 🔧'
+        uses: ./.github/actions/setup
+
+      - name: 'Configure Git for publish 🌴'
+        run: |
+          git config user.name "${{ github.event.pusher.name }}"
+          git config user.email "${{ github.event.pusher.email }}"
+
+      - name: 'Publish packages 🚀'
+        run: ./scripts/publish.sh
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
