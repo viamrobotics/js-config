@@ -37,11 +37,6 @@ jobs:
         with:
           registry-url: 'https://registry.npmjs.org'
 
-      - name: 'Configure Git for publish 🌴'
-        run: |
-          git config user.name "${{ github.event.pusher.name }}"
-          git config user.email "${{ github.event.pusher.email }}"
-
       - name: 'Publish packages 🚀'
         run: ./scripts/publish.sh
         env:
