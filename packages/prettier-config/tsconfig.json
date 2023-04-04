@@ -2,7 +2,8 @@
   "extends": "@viamrobotics/typescript-config",
   "compilerOptions": {
     "types": ["node"],
-    "noEmit": true
+    "declaration": true,
+    "emitDeclarationOnly": true
   },
-  "include": ["./**/.*"]
+  "include": ["./**/*.cjs"]
 }

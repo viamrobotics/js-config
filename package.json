@@ -9,10 +9,11 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "all": "concurrently -g pnpm:check-*",
+    "all": "concurrently -g pnpm:check-* pnpm:build",
     "check-format": "pnpm run _prettier-base --check",
     "check-lint": "eslint \"**/*.@(js|cjs|ts)\"",
     "check-types": "tsc",
+    "build": "pnpm run -r --aggregate-output build",
     "format": "pnpm run _prettier-base --write",
     "_prettier-base": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\""
   },

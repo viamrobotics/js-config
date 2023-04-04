@@ -1,1 +1,3 @@
 node_modules
+pnpm-publish-summary.json
+*.d.cts

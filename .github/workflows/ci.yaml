@@ -13,7 +13,38 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: 'Install 🔧'
         uses: ./.github/actions/setup
+
       - name: 'Run checks ✅'
         run: pnpm all
+
+  publish:
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    needs: [check]
+    runs-on: ubuntu-latest
+    permissions:
+      # write permission required to push tags
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: 'Install 🔧'
+        uses: ./.github/actions/setup
+        with:
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 'Build 🏗️'
+        run: pnpm build
+
+      - name: 'Configure Git for publish 🌴'
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+
+      - name: 'Publish packages 🚀'
+        run: ./scripts/publish.sh
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

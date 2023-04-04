@@ -3,11 +3,17 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Common Prettier configuration for Viam projects.",
+  "types": "./base.d.cts",
   "exports": {
-    ".": "./base.cjs",
-    "./svelte": "./svelte.cjs"
+    ".": {
+      "types": "./base.d.cts",
+      "default": "./base.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
