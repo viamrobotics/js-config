@@ -186,6 +186,9 @@ module.exports = {
       parserOptions: {
         sourceType: 'script',
       },
+      env: {
+        commonjs: true,
+      },
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
       },
