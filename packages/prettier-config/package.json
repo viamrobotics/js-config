@@ -13,7 +13,7 @@
     }
   },
   "scripts": {
-    "check-types": "tsc"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",

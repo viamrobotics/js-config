@@ -32,7 +32,7 @@ pnpm install
 Once your development dependencies are installed, you can verify that all checks and tests are passing:
 
 ```shell
-# run all checks
+# run all checks and builds
 pnpm all
 
 # check lints
@@ -44,6 +44,9 @@ pnpm check-types
 # check formatting
 pnpm check-format
 
+# build all packages
+pnpm build
+
 # auto-format (modifies files)
 pnpm format
 ```
@@ -53,4 +56,4 @@ pnpm format
 
 ### Releasing
 
-Modules in this repository are continuously deployed to npm from the `main` branch. To trigger a release, create a commit that bumps `version` in one or more `package.json` file and create a pull request to merge that commit into `main`.
+Modules in this repository are continuously deployed to npm from the `main` branch. To trigger a release, create a commit that bumps `version` in one or more `package.json` files and create a pull request to merge that commit into `main`.

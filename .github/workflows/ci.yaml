@@ -36,6 +36,9 @@ jobs:
         with:
           registry-url: 'https://registry.npmjs.org'
 
+      - name: 'Build 🏗️'
+        run: pnpm build
+
       - name: 'Configure Git for publish 🌴'
         run: |
           git config user.name github-actions
