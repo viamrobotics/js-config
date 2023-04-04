@@ -16,6 +16,6 @@ Use the [base config](./tsconfig.base.json) for generic TypeScript projects, inc
 ```json
 // tsconfig.json
 {
-  "extends": "@viamrobotics/typescript-config"
+  "extends": "@viamrobotics/typescript-config/base.json"
 }
 ```

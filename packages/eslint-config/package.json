@@ -5,6 +5,10 @@
   },
   "version": "0.0.1",
   "description": "Common ESLint configuration for Viam projects.",
+  "files": [
+    "**/*",
+    "!tsconfig.json"
+  ],
   "types": "./base.d.cts",
   "exports": {
     ".": {
