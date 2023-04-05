@@ -3,11 +3,12 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Common TypeScript configuration for Viam projects.",
-  "exports": {
-    ".": "./tsconfig.base.json"
-  },
+  "files": [
+    "**/*",
+    "!tsconfig.json"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viamrobotics/js-config.git",

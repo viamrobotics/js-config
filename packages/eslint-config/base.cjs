@@ -70,7 +70,6 @@ module.exports = {
     'no-constructor-return': 'error',
     'no-debugger': 'warn',
     'no-div-regex': 'error',
-    'no-duplicate-imports': 'error',
     'no-else-return': 'error',
     'no-empty-static-block': 'error',
     'no-eval': 'error',
@@ -110,7 +109,6 @@ module.exports = {
     'no-unmodified-loop-condition': 'error',
     'no-unused-expressions': 'error',
     'no-unused-private-class-members': 'error',
-    'no-use-before-define': 'error',
     'no-useless-call': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-concat': 'error',
@@ -154,6 +152,16 @@ module.exports = {
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/no-use-before-define': [
+      'warn',
+      {
+        functions: false,
+        classes: false,
+        variables: false,
+        allowNamedExports: true,
+        ignoreTypeReferences: true,
+      },
+    ],
 
     // Extra import rules
     'import/no-absolute-path': 'error',
@@ -177,6 +185,9 @@ module.exports = {
       files: ['**/*.cjs'],
       parserOptions: {
         sourceType: 'script',
+      },
+      env: {
+        commonjs: true,
       },
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
