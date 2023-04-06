@@ -22,16 +22,16 @@ function get_published_versions () {
   name=${2}
 
   published_meta=$(npm --workspace="${package}" info --json 2>/dev/null ||:)
-  publish_meta_error=$(echo "${published_meta}" | jq -r ".error.code")
+  published_meta_error=$(echo "${published_meta}" | jq -r ".error.code")
 
-  if [[ "${publish_meta_error}" == "null" ]]; then
+  if [[ "${published_meta_error}" == "null" ]]; then
     published_versions=$(echo "${published_meta}" | jq -r ".[\"${name}\"].versions[]")
 
-  elif [[ "${publish_meta_error}" == "E404" ]]; then
+  elif [[ "${published_meta_error}" == "E404" ]]; then
     published_versions=""
 
   else
-    echo "Unable to read registry for ${package}: ${publish_meta_error}" >&2
+    echo "Unable to read registry for ${package}: ${published_meta_error}" >&2
     echo "${published_meta}" >&2
     exit 1
   fi
