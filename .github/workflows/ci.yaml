@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: 'Run checks ✅'
-        run: pnpm all
+        run: npm run all
 
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -37,7 +37,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
 
       - name: 'Build 🏗️'
-        run: pnpm build
+        run: npm run build
 
       - name: 'Configure Git for publish 🌴'
         run: |

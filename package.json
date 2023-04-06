@@ -1,21 +1,23 @@
 {
   "name": "@viamrobotics/js-config",
   "private": true,
-  "packageManager": "pnpm@8.1.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "engines": {
-    "node": ">=18",
-    "pnpm": ">=8"
+    "node": ">=18"
   },
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "all": "concurrently -g pnpm:check-* pnpm:build",
-    "check-format": "pnpm run _prettier-base --check",
-    "check-lint": "eslint \"**/*.@(js|cjs|ts)\"",
+    "all": "concurrently -g npm:check-* npm:build",
+    "check-format": "npm run _prettier -- --check",
+    "check-lint": "npm run _eslint",
     "check-types": "tsc",
-    "build": "pnpm run -r --aggregate-output build",
-    "format": "pnpm run _prettier-base --write",
-    "_prettier-base": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\""
+    "build": "npm run build --workspaces --if-present",
+    "format": "npm run _prettier -- --write && npm run _eslint -- --fix",
+    "_prettier": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\"",
+    "_eslint": "eslint \".*.cjs\" \"**/*.@(js|cjs|ts)\""
   },
   "dependencies": {
     "@viamrobotics/eslint-config": "workspace:*",
