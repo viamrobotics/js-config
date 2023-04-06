@@ -39,7 +39,7 @@ function get_published_versions () {
   echo "${published_versions}"
 }
 
-
+# publish the package at a given path if it has not yet been published
 function publish_package () {
   package=${1}
 
@@ -60,7 +60,7 @@ function publish_package () {
 # get a space-separated list of all workspace
 workspaces=$(jq -r ".workspaces[]" < package.json)
 
-# compare the local and published version of each package, and publish if needed
+
 for package in ${workspaces}; do
   publish_package "${package}"
 done
