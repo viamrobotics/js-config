@@ -52,7 +52,7 @@ function publish_package () {
     echo "${tag} is already published"
   else
     echo "Publishing ${tag}"
-    npm --workspace "${package}" publish --dry-run
+    npm --workspace "${package}" publish
     git tag -a "${tag}" -m "${tag}"
   fi
 }
