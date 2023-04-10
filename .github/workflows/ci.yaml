@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: 'Run checks ✅'
-        run: pnpm all
+        run: npm run all
 
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -33,18 +33,30 @@ jobs:
 
       - name: 'Install 🔧'
         uses: ./.github/actions/setup
-        with:
-          registry-url: 'https://registry.npmjs.org'
 
       - name: 'Build 🏗️'
-        run: pnpm build
+        run: npm run build
 
       - name: 'Configure Git for publish 🌴'
         run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
 
-      - name: 'Publish packages 🚀'
-        run: ./scripts/publish.sh
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 'Publish ESLint config 🚀'
+        uses: ./.github/actions/publish
+        with:
+          name: '@viamrobotics/eslint-config'
+          package: packages/eslint-config/package.json
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - name: 'Publish Prettier config 🚀'
+        uses: ./.github/actions/publish
+        with:
+          name: '@viamrobotics/prettier-config'
+          package: packages/prettier-config/package.json
+          token: ${{ secrets.NPM_TOKEN }}
+
+      - name: 'Publish TypeScript config 🚀'
+        uses: ./.github/actions/publish
+        with:
+          name: '@viamrobotics/typescript-config'
+          package: packages/typescript-config/package.json
+          token: ${{ secrets.NPM_TOKEN }}
