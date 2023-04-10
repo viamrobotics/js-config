@@ -6,10 +6,6 @@ inputs:
     description: 'Node.js version to install'
     default: '18'
 
-  registry-url:
-    description: 'Registry URL (required for publish)'
-    required: false
-
 runs:
   using: 'composite'
   steps:
@@ -17,7 +13,6 @@ runs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ inputs.node-version }}
-        registry-url: ${{ inputs.registry-url }}
         cache: npm
 
     - name: 'Install development dependencies'
