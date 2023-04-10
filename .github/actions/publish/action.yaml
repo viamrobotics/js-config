@@ -33,3 +33,4 @@ runs:
         git config user.name github-actions
         git config user.email github-actions@github.com
         git tag -a "${{ env.TAG_NAME }}" -m "${{ env.TAG_NAME }}"
+        git push origin "${{ env.TAG_NAME }}"
