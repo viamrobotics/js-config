@@ -20,39 +20,35 @@ Shared configuration for JavaScript and TypeScript tools:
 
 ## Contributing
 
-We use [corepack][] and [pnpm][] to manage development dependencies and tasks for this repository. To get started, enable corepack (if you haven't already), clone the repository, and install the project's development dependencies. Node.js v18 or higher is required.
+Node.js v18 or higher is required to develop on this repository. To get started, clone the repository and install the project's development dependencies. .
 
 ```shell
-corepack enable
 git clone https://github.com/viamrobotics/js-config.git
 cd js-config
-pnpm install
+npm install
 ```
 
 Once your development dependencies are installed, you can verify that all checks and tests are passing:
 
 ```shell
 # run all checks and builds
-pnpm all
+npm run all
 
 # check lints
-pnpm check-lint
+npm run check-lint
 
 # check types
-pnpm check-types
+npm run check-types
 
 # check formatting
-pnpm check-format
+npm run check-format
 
 # build all packages
-pnpm build
+npm run build
 
 # auto-format (modifies files)
-pnpm format
+npm run format
 ```
-
-[corepack]: https://nodejs.org/docs/latest-v18.x/api/corepack.html
-[pnpm]: https://pnpm.io/
 
 ### Releasing
 
