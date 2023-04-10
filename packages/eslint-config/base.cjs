@@ -54,8 +54,7 @@ module.exports = {
     ],
     'line-comment-position': 'error',
     'lines-between-class-members': [
-      // TODO(mc, 2023-04-06): promote to error
-      'warn',
+      'error',
       'always',
       { exceptAfterSingleLine: true },
     ],
