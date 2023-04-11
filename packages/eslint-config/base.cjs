@@ -53,7 +53,11 @@ module.exports = {
       },
     ],
     'line-comment-position': 'error',
-    'lines-between-class-members': 'error',
+    'lines-between-class-members': [
+      'error',
+      'always',
+      { exceptAfterSingleLine: true },
+    ],
     'logical-assignment-operators': 'error',
     'max-classes-per-file': 'error',
     'max-depth': 'error',
@@ -101,11 +105,12 @@ module.exports = {
     'no-script-url': 'error',
     'no-self-compare': 'error',
     'no-sequences': 'error',
+    'no-shadow': 'off',
     'no-template-curly-in-string': 'error',
     'no-unneeded-ternary': 'error',
     'no-unreachable-loop': 'error',
     'no-undef-init': 'error',
-    'no-underscore-dangle': 'error',
+    'no-underscore-dangle': ['error', { allow: ['__VERSION__'] }],
     'no-unmodified-loop-condition': 'error',
     'no-unused-expressions': 'error',
     'no-unused-private-class-members': 'error',
@@ -151,6 +156,7 @@ module.exports = {
     // Extra TypeScript rules
     '@typescript-eslint/return-await': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-use-before-define': [
       'warn',
@@ -169,6 +175,9 @@ module.exports = {
     'import/no-self-import': 'error',
     'import/no-useless-path-segments': 'error',
     'import/order': 'error',
+
+    // Extra SonarJS rules
+    'sonarjs/cognitive-complexity': ['error', 20],
 
     // Extra Unicorn rules
     'unicorn/consistent-destructuring': 'off',
@@ -191,6 +200,13 @@ module.exports = {
       },
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+    // __dirname and __filename are allowed in vite.config.ts
+    {
+      files: ['**/vite.config.ts', '**/vitest.config.ts'],
+      rules: {
+        'unicorn/prefer-module': 'off',
       },
     },
   ],
