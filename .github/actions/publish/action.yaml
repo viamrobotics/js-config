@@ -2,12 +2,8 @@ name: 'Publish to NPM'
 description: 'Publish a package to NPM'
 
 inputs:
-  name:
-    description: 'Package name, used to tag release commits'
-    required: true
-
   package:
-    description: 'Path to package.json'
+    description: 'Path to package'
     required: true
 
   token:
@@ -19,18 +15,18 @@ runs:
   steps:
     - id: publish
       name: Publish package
-      uses: JS-DevTools/npm-publish@1641d030cee266f093503c555ee9303ae7aede16
+      uses: JS-DevTools/npm-publish@0be441d808570461daedc3fb178405dbcac54de0
       with:
         package: ${{ inputs.package }}
         token: ${{ inputs.token }}
 
-    - name: Tag commit
-      if: ${{ steps.publish.outputs.type != 'none' }}
+    - if: ${{ steps.publish.outputs.id }}
+      name: Tag commit
       shell: bash
       env:
-        TAG_NAME: ${{ inputs.name }}@${{ steps.publish.outputs.version }}
+        TAG_NAME: ${{ steps.publish.outputs.id }}
       run: |
         git config user.name github-actions
         git config user.email github-actions@github.com
-        git tag -a "${{ env.TAG_NAME }}" -m "${{ env.TAG_NAME }}"
-        git push origin "${{ env.TAG_NAME }}"
+        git tag -a "${TAG_NAME}" -m "${TAG_NAME}"
+        git push origin "${TAG_NAME}"
