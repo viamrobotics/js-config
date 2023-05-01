@@ -16,6 +16,7 @@
     "check-types": "tsc",
     "build": "npm run build --workspaces --if-present",
     "format": "npm run _prettier -- --write && npm run _eslint -- --fix",
+    "update-dependencies": "npm-check --update",
     "_prettier": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\"",
     "_eslint": "eslint \".*.cjs\" \"**/*.@(js|cjs|ts)\""
   },
@@ -25,17 +26,18 @@
     "@viamrobotics/typescript-config": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "@typescript-eslint/eslint-plugin": "^5.57.0",
-    "@typescript-eslint/parser": "^5.57.0",
+    "@types/node": "^18.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
     "concurrently": "^8.0.1",
-    "eslint": "^8.37.0",
+    "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.4",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-sonarjs": "^0.19.0",
     "eslint-plugin-unicorn": "^46.0.0",
-    "prettier": "^2.8.7",
-    "typescript": "^5.0.2"
+    "npm-check": "^6.0.1",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
   }
 }
