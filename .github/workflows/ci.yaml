@@ -37,26 +37,20 @@ jobs:
       - name: 'Build 🏗️'
         run: npm run build
 
-      - name: 'Configure Git for publish 🌴'
-        run: |
-
       - name: 'Publish ESLint config 🚀'
         uses: ./.github/actions/publish
         with:
-          name: '@viamrobotics/eslint-config'
-          package: packages/eslint-config/package.json
+          package: ./packages/eslint-config
           token: ${{ secrets.NPM_TOKEN }}
 
       - name: 'Publish Prettier config 🚀'
         uses: ./.github/actions/publish
         with:
-          name: '@viamrobotics/prettier-config'
-          package: packages/prettier-config/package.json
+          package: ./packages/prettier-config
           token: ${{ secrets.NPM_TOKEN }}
 
       - name: 'Publish TypeScript config 🚀'
         uses: ./.github/actions/publish
         with:
-          name: '@viamrobotics/typescript-config'
-          package: packages/typescript-config/package.json
+          package: ./packages/typescript-config
           token: ${{ secrets.NPM_TOKEN }}
