@@ -4,6 +4,7 @@ module.exports = {
   // overrides
   singleQuote: true,
   jsxSingleQuote: true,
+  singleAttributePerLine: true,
 
   // default values
   printWidth: 80,
@@ -20,5 +21,4 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'auto',
-  singleAttributePerLine: false,
 };
