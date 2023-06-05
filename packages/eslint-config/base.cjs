@@ -22,7 +22,7 @@ module.exports = {
     // Extra built-in rules
     'accessor-pairs': ['error'],
     'array-callback-return': ['error', { checkForEach: true }],
-    camelcase: ['error', { properties: 'never' }],
+    camelcase: ['error', { properties: 'never', ignoreImports: true }],
     'class-methods-use-this': ['error'],
     curly: ['error', 'all'],
     'default-case-last': ['error'],
