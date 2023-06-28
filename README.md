@@ -25,29 +25,30 @@ Node.js v18 or higher is required to develop on this repository. To get started,
 ```shell
 git clone https://github.com/viamrobotics/js-config.git
 cd js-config
-npm install
+corepack enable
+pnpm install
 ```
 
 Once your development dependencies are installed, you can verify that all checks and tests are passing:
 
 ```shell
 # run all checks and builds
-npm run all
+pnpm all
 
 # check lints
-npm run check-lint
+pnpm check-lint
 
 # check types
-npm run check-types
+pnpm check-types
 
 # check formatting
-npm run check-format
+pnpm check-format
 
 # build all packages
-npm run build
+pnpm build
 
 # auto-format (modifies files)
-npm run format
+pnpm format
 ```
 
 ### Releasing
