@@ -1,42 +1,39 @@
 {
   "name": "@viamrobotics/js-config",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "engines": {
     "node": ">=18"
   },
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "all": "concurrently -g npm:check-* npm:build",
-    "check-format": "npm run _prettier -- --check",
-    "check-lint": "npm run _eslint",
+    "all": "concurrently -g pnpm:check-* pnpm:build",
+    "check-format": "pnpm run _prettier --check",
+    "check-lint": "pnpm run _eslint",
     "check-types": "tsc",
-    "build": "npm run build --workspaces --if-present",
-    "format": "npm run _prettier -- --write && npm run _eslint -- --fix",
-    "update-dependencies": "npm-check --update",
+    "build": "pnpm run --recursive --aggregate-output build",
+    "format": "pnpm run _prettier --write && pnpm run _eslint --fix",
+    "update-dependencies": "pnpm update --recursive --interactive --latest",
     "_prettier": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\"",
     "_eslint": "eslint \".*.cjs\" \"**/*.@(js|cjs|ts)\""
   },
+  "packageManager": "pnpm@8.6.5",
   "dependencies": {
     "@viamrobotics/eslint-config": "workspace:*",
     "@viamrobotics/prettier-config": "workspace:*",
     "@viamrobotics/typescript-config": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^18.16.3",
+    "@types/node": "^20.3.2",
     "@typescript-eslint/eslint-plugin": "^5.59.1",
     "@typescript-eslint/parser": "^5.59.1",
-    "concurrently": "^8.0.1",
+    "concurrently": "^8.2.0",
     "eslint": "^8.39.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-import-resolver-typescript": "^3.5.4",
+    "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-sonarjs": "^0.19.0",
-    "eslint-plugin-unicorn": "^46.0.0",
-    "npm-check": "^6.0.1",
+    "eslint-plugin-unicorn": "^47.0.0",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4"
   }

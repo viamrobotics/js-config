@@ -18,7 +18,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: 'Run checks ✅'
-        run: npm run all
+        run: pnpm run all
 
   publish:
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
@@ -35,7 +35,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: 'Build 🏗️'
-        run: npm run build
+        run: pnpm run build
 
       - name: 'Publish ESLint config 🚀'
         uses: ./.github/actions/publish
