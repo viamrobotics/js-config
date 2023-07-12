@@ -3,7 +3,7 @@
 This module contains [Viam][]'s shared [Prettier][] configurations for Prettier v2.
 
 ```shell
-npm install --save-dev prettier @viamrobotics/prettier-config
+pnpm add --save-dev prettier @viamrobotics/prettier-config
 ```
 
 [viam]: https://www.viam.com/
@@ -11,7 +11,7 @@ npm install --save-dev prettier @viamrobotics/prettier-config
 
 ### Base config
 
-Use the [base config](./base.cjs) for React, Vue, and vanilla JavaScript / TypeScript projects.
+Use the [base config](./base.cjs) for vanilla JavaScript / TypeScript projects.
 
 ```js
 // .prettierrc.cjs
@@ -32,4 +32,23 @@ module.exports = {
   ...baseConfig,
   // other options here
 };
+```
+
+### Svelte config
+
+Use the [Svelte config](./svelte.cjs) for Svelte projects.
+
+```shell
+pnpm add --save-dev \
+  prettier \
+  @viamrobotics/prettier-config \
+  prettier-plugin-svelte \
+  prettier-plugin-tailwindcss
+```
+
+```js
+// .prettierrc.cjs
+'use strict';
+
+module.exports = '@viamrobotics/prettier-config/svelte';
 ```
