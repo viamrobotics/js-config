@@ -9,8 +9,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
     'plugin:@typescript-eslint/strict',
     'plugin:unicorn/recommended',
-    'plugin:import/recommended',
-    'plugin:import/typescript',
     'plugin:sonarjs/recommended',
     'prettier',
   ],
@@ -169,13 +167,7 @@ module.exports = {
         ignoreTypeReferences: true,
       },
     ],
-
-    // Extra import rules
-    'import/no-absolute-path': 'error',
-    'import/no-cycle': 'error',
-    'import/no-self-import': 'error',
-    'import/no-useless-path-segments': 'error',
-    'import/order': 'error',
+    '@typescript-eslint/promise-function-async': 'error',
 
     // Extra SonarJS rules
     'sonarjs/cognitive-complexity': ['error', 20],

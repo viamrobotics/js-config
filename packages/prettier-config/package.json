@@ -3,17 +3,21 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "Common Prettier configuration for Viam projects.",
   "files": [
     "**/*",
     "!tsconfig.json"
   ],
-  "types": "./base.d.cts",
+  "types": "./dist/base.d.cts",
   "exports": {
     ".": {
-      "types": "./base.d.cts",
+      "types": "./dist/base.d.cts",
       "default": "./base.cjs"
+    },
+    "./svelte": {
+      "types": "./dist/svelte.d.cts",
+      "default": "./svelte.cjs"
     }
   },
   "scripts": {
@@ -30,6 +34,16 @@
   ],
   "license": "Apache-2.0",
   "peerDependencies": {
-    "prettier": ">=2 <3"
+    "prettier": ">=2 <3",
+    "prettier-plugin-svelte": ">=2 <3",
+    "prettier-plugin-tailwindcss": ">=0.4.0 <0.5"
+  },
+  "peerDependenciesMeta": {
+    "prettier-plugin-svelte": {
+      "optional": true
+    },
+    "prettier-plugin-tailwindcss": {
+      "optional": true
+    }
   }
 }
