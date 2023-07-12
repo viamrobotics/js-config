@@ -169,6 +169,7 @@ module.exports = {
         ignoreTypeReferences: true,
       },
     ],
+    '@typescript-eslint/promise-function-async': 'error',
 
     // Extra import rules
     'import/no-absolute-path': 'error',

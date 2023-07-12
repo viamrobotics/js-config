@@ -3,7 +3,8 @@
   "compilerOptions": {
     "types": ["node"],
     "declaration": true,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "outDir": "dist"
   },
   "include": ["./**/*.cjs"]
 }

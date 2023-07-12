@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Common ESLint configuration for Viam projects.",
   "files": [
     "**/*",
@@ -12,8 +12,12 @@
   "types": "./base.d.cts",
   "exports": {
     ".": {
-      "types": "./base.d.cts",
+      "types": "./dist/base.d.cts",
       "default": "./base.cjs"
+    },
+    "./svelte": {
+      "types": "./dist/svelte.d.cts",
+      "default": "./svelte.cjs"
     }
   },
   "scripts": {
@@ -37,6 +41,16 @@
     "eslint-import-resolver-typescript": ">=3 <4",
     "eslint-plugin-import": ">=2 <3",
     "eslint-plugin-sonarjs": ">=0.19 <0.20",
+    "eslint-plugin-svelte": ">=2 <3",
+    "eslint-plugin-tailwindcss": ">=3 <4",
     "eslint-plugin-unicorn": ">=46 <47"
+  },
+  "peerDependenciesMeta": {
+    "eslint-plugin-svelte": {
+      "optional": true
+    },
+    "eslint-plugin-tailwindcss": {
+      "optional": true
+    }
   }
 }

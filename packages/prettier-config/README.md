@@ -9,7 +9,7 @@ pnpm add --save-dev prettier @viamrobotics/prettier-config
 [viam]: https://www.viam.com/
 [prettier]: https://prettier.io/
 
-### Base config
+## Base config
 
 Use the [base config](./base.cjs) for vanilla JavaScript / TypeScript projects.
 
@@ -34,7 +34,7 @@ module.exports = {
 };
 ```
 
-### Svelte config
+## Svelte config
 
 Use the [Svelte config](./svelte.cjs) for Svelte projects.
 
