@@ -23,14 +23,6 @@ module.exports = {
   parserOptions: {
     project: ['./tsconfig.json'],
   },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: ['./tsconfig.json'],
-      },
-    },
-  },
 };
 ```
 
@@ -51,18 +43,10 @@ pnpm add --save-dev \
 'use strict';
 
 module.exports = {
-  root: true
+  root: true,
   extends: ['@viamrobotics/eslint-config/svelte'],
   parserOptions: {
     project: ['./tsconfig.json'],
   },
-  settings: {
-    'import/resolver': {
-      typescript: {
-        alwaysTryTypes: true,
-        project: ['./tsconfig.json'],
-      },
-    },
-  },
-}
+};
 ```

@@ -38,8 +38,6 @@
     "@typescript-eslint/parser": ">=5 <6",
     "eslint": ">=8 <9",
     "eslint-config-prettier": ">=8 <9",
-    "eslint-import-resolver-typescript": ">=3 <4",
-    "eslint-plugin-import": ">=2 <3",
     "eslint-plugin-sonarjs": ">=0.19 <0.20",
     "eslint-plugin-svelte": ">=2 <3",
     "eslint-plugin-tailwindcss": ">=3 <4",
