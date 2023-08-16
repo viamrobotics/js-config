@@ -3,8 +3,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Common Prettier configuration for Viam projects.",
+  "type": "module",
   "files": [
     "**/*",
     "!tsconfig.json"
@@ -12,12 +13,12 @@
   "types": "./dist/base.d.cts",
   "exports": {
     ".": {
-      "types": "./dist/base.d.cts",
-      "default": "./base.cjs"
+      "types": "./dist/base.d.ts",
+      "default": "./base.js"
     },
     "./svelte": {
-      "types": "./dist/svelte.d.cts",
-      "default": "./svelte.cjs"
+      "types": "./dist/svelte.d.ts",
+      "default": "./svelte.js"
     }
   },
   "scripts": {

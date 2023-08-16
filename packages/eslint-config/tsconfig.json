@@ -6,5 +6,5 @@
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
-  "include": ["./**/*.cjs"]
+  "include": ["**/*.cjs"]
 }
