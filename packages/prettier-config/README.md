@@ -22,8 +22,6 @@ You can also extend the configuration:
 
 ```js
 // .prettierrc.js
-'use strict';
-
 import baseConfig from '@viamrobotics/prettier-config';
 
 export default {
