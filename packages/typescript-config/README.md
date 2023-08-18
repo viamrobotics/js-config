@@ -11,7 +11,7 @@ npm install --save-dev typescript @viamrobotics/typescript-config
 
 ### Base config
 
-Use the [base config](./tsconfig.base.json) for generic TypeScript projects, including code that runs natively in Node.js or isomorphicaly, in both Node.js and the browser.
+Use the [base config](./tsconfig.base.json) for generic TypeScript projects, including code that runs natively in Node.js or isomorphically, in both Node.js and the browser.
 
 ```json
 // tsconfig.json

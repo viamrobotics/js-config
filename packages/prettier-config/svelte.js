@@ -1,8 +1,6 @@
-'use strict';
+import baseConfig from './base.js';
 
-const baseConfig = require('./base.cjs');
-
-module.exports = {
+export default {
   ...baseConfig,
   plugins: ['prettier-plugin-svelte', 'prettier-plugin-tailwindcss'],
   svelteIndentScriptAndStyle: false,

@@ -1,10 +1,9 @@
-'use strict';
-
-module.exports = {
+export default {
   // overrides
   singleQuote: true,
   jsxSingleQuote: true,
   singleAttributePerLine: true,
+  trailingComma: 'es5',
 
   // default values
   printWidth: 80,
@@ -12,7 +11,6 @@ module.exports = {
   useTabs: false,
   semi: true,
   quoteProps: 'as-needed',
-  trailingComma: 'es5',
   bracketSpacing: true,
   bracketSameLine: false,
   arrowParens: 'always',
