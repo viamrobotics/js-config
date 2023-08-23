@@ -33,7 +33,10 @@ describe('peer dependency specifications', () => {
             const devVersion = devDependencies[dependencyName];
 
             expect(devVersion).toBeDefined();
-            expect(semver.subset(devVersion!, peerRange));
+            expect(
+              semver.subset(devVersion!, peerRange),
+              `"${devVersion!}" should be within peer range "${peerRange}"`
+            ).toBe(true);
           });
         }
       );
