@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Common Prettier configuration for Viam projects.",
   "type": "module",
   "files": [
@@ -37,7 +37,7 @@
   "peerDependencies": {
     "prettier": ">=3 <4",
     "prettier-plugin-svelte": ">=3 <4",
-    "prettier-plugin-tailwindcss": ">=0.4.0 <0.5"
+    "prettier-plugin-tailwindcss": ">=0.4.0 <0.6"
   },
   "peerDependenciesMeta": {
     "prettier-plugin-svelte": {
