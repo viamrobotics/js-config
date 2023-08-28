@@ -14,15 +14,15 @@ pnpm add --save-dev prettier @viamrobotics/prettier-config
 ```
 
 ```js
-// .prettierrc.js
-export default '@viamrobotics/prettier-config';
+// .prettierrc.cjs
+module.exports = '@viamrobotics/prettier-config';
 ```
 
 You can also extend the configuration:
 
 ```js
-// .prettierrc.js
-import baseConfig from '@viamrobotics/prettier-config';
+// .prettierrc.cjs
+const baseConfig = require('@viamrobotics/prettier-config');
 
 export default {
   ...baseConfig,
@@ -43,6 +43,6 @@ pnpm add --save-dev \
 ```
 
 ```js
-// .prettierrc.js
-export default '@viamrobotics/prettier-config/svelte';
+// .prettierrc.cjs
+module.exports = '@viamrobotics/prettier-config/svelte';
 ```
