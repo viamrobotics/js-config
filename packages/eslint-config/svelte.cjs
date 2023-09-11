@@ -22,6 +22,13 @@ module.exports = {
       parserOptions: {
         parser: '@typescript-eslint/parser',
       },
+      rules: {
+        /*
+         * TODO(mc, 2023-08-28): this rule is crashing with svelte actions.
+         * https://github.com/sveltejs/eslint-plugin-svelte/issues/583
+         */
+        'sonarjs/no-unused-collection': 'off',
+      },
     },
   ],
 };
