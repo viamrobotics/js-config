@@ -15,8 +15,8 @@
     "build": "pnpm run --recursive --aggregate-output build",
     "format": "pnpm run _prettier --write && pnpm run _eslint --fix",
     "update-dependencies": "pnpm update --recursive --interactive --latest",
-    "_prettier": "prettier \"**/*.@(js|cjs|ts|json|yaml|md)\"",
-    "_eslint": "eslint \".*.cjs\" \"**/*.@(js|cjs|ts)\""
+    "_prettier": "prettier \"**/*.{js,cjs,ts,json,yaml,md}\"",
+    "_eslint": "eslint \".*.cjs\" \"**/*.{js,cjs,ts}\""
   },
   "packageManager": "pnpm@8.7.5",
   "dependencies": {

@@ -11,8 +11,12 @@
   ],
   "typesVersions": {
     "*": {
-      ".": ["dist/base.d.cts"],
-      "svelte": ["dist/svelte.d.cts"]
+      ".": [
+        "dist/base.d.cts"
+      ],
+      "svelte": [
+        "dist/svelte.d.cts"
+      ]
     }
   },
   "exports": {
