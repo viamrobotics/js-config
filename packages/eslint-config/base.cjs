@@ -152,6 +152,10 @@ module.exports = {
 
     // Extra TypeScript rules
     '@typescript-eslint/return-await': 'error',
+    '@typescript-eslint/no-confusing-void-expression': [
+      'error',
+      { ignoreArrowShorthand: true },
+    ],
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
