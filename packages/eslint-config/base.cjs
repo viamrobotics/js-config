@@ -107,7 +107,6 @@ module.exports = {
     'no-template-curly-in-string': 'error',
     'no-unneeded-ternary': 'error',
     'no-unreachable-loop': 'error',
-    'no-undef-init': 'error',
     'no-underscore-dangle': ['error', { allow: ['__VERSION__'] }],
     'no-unmodified-loop-condition': 'error',
     'no-unused-expressions': 'error',
@@ -176,6 +175,7 @@ module.exports = {
     'unicorn/custom-error-definition': 'error',
     'unicorn/no-null': 'off',
     'unicorn/no-unused-properties': 'error',
+    'unicorn/no-useless-undefined': 'off',
     'unicorn/prefer-string-replace-all': 'error',
     'unicorn/prefer-top-level-await': 'off',
     'unicorn/prevent-abbreviations': 'off',
@@ -199,6 +199,14 @@ module.exports = {
       files: ['**/vite.config.ts', '**/vitest.config.ts'],
       rules: {
         'unicorn/prefer-module': 'off',
+      },
+    },
+    // Relax rules that don't make sense for testing
+    {
+      files: ['**/__tests__/**', '**/*.spec.ts'],
+      rules: {
+        '@typescript-eslint/no-unsafe-assignment': 'off',
+        'sonarjs/no-duplicate-string': 'off',
       },
     },
   ],
