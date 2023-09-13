@@ -3,17 +3,15 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Common ESLint configuration for Viam projects.",
   "files": [
     "**/*",
     "!tsconfig.json"
   ],
+  "types": "dist/base.d.cts",
   "typesVersions": {
     "*": {
-      ".": [
-        "dist/base.d.cts"
-      ],
       "svelte": [
         "dist/svelte.d.cts"
       ]
