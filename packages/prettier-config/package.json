@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Common Prettier configuration for Viam projects.",
   "type": "commonjs",
   "files": [

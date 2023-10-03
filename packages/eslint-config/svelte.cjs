@@ -10,6 +10,12 @@ module.exports = {
     'plugin:svelte/recommended',
     'plugin:svelte/prettier',
   ],
+  settings: {
+    tailwindcss: {
+      callees: ['classnames', 'cx'],
+      classRegex: '^(?:class|cx)$',
+    },
+  },
   parserOptions: {
     ...baseConfig.parserOptions,
     extraFileExtensions: ['.svelte'],
