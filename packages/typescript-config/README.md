@@ -3,7 +3,7 @@
 This module contains [Viam][]'s shared [TypeScript][] configurations for TypeScript v5.
 
 ```shell
-npm install --save-dev typescript @viamrobotics/typescript-config
+pnpm add --save-dev typescript @viamrobotics/typescript-config
 ```
 
 [viam]: https://www.viam.com/
