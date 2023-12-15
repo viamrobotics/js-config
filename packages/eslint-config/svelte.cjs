@@ -34,6 +34,9 @@ module.exports = {
          * https://github.com/sveltejs/eslint-plugin-svelte/issues/583
          */
         'sonarjs/no-unused-collection': 'off',
+
+        // Allows us to set option props to `undefined` by default
+        'no-undef-init': 'off',
       },
     },
   ],
