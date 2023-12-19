@@ -1,6 +1,8 @@
 # Viam Shared JS/TS Config
 
-Shared configuration for JavaScript and TypeScript tools:
+Shared configuration for JavaScript and TypeScript tools.
+
+## Libraries
 
 | Tool                          | NPM Module                        | Version                                   |
 | ----------------------------- | --------------------------------- | ----------------------------------------- |
@@ -17,6 +19,44 @@ Shared configuration for JavaScript and TypeScript tools:
 [typescript docs]: ./packages/typescript-config
 [typescript npm]: https://www.npmjs.com/package/@viamrobotics/typescript-config
 [typescript version]: https://img.shields.io/npm/v/@viamrobotics/typescript-config?style=flat-square
+
+## Actions
+
+For usages with GitHub Actions CI
+
+### Setup
+
+Install Node.js, pnpm, and development dependencies
+
+```yaml
+- name: Setup Node.js
+  uses: viamrobotics/js-config/.github/actions/setup
+  with:
+    node-version: '20'
+```
+
+| Option                 | Description                          | Default |
+| ---------------------- | ------------------------------------ | ------- |
+| `node-version`         | Which Node.js version to install     | `20`    |
+| `registry-url`         | Configure a registry URL for publish | Unset   |
+| `install-dependencies` | Run `pnpm install`                   | `true`  |
+
+### Publish
+
+Publish a package to npm and add a tag to the repository
+
+```yaml
+- name: Publish to npm
+  uses: viamrobotics/js-config/.github/actions/publish
+  with:
+    package: 'packages/cool-lib'
+    token: ${{ secrets.NPM_TOKEN }}
+```
+
+| Option    | Description                                  | Default  |
+| --------- | -------------------------------------------- | -------- |
+| `package` | Path to package.json or directory to publish | Required |
+| `token`   | npm auth token                               | Required |
 
 ## Contributing
 
