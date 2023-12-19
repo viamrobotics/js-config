@@ -4,7 +4,16 @@ description: 'Install Node.js and development dependencies'
 inputs:
   node-version:
     description: 'Node.js version to install'
-    default: '18'
+    default: '20'
+
+  registry-url:
+    description: 'Registry URL to set'
+    required: false
+
+  install-dependencies:
+    description: 'Run pnpm install to install dependencies'
+    type: boolean
+    default: true
 
 runs:
   using: 'composite'
@@ -16,8 +25,10 @@ runs:
       uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
       with:
         node-version: ${{ inputs.node-version }}
+        registry-url: ${{ inputs.registry-url }}
         cache: pnpm
 
     - name: 'Install dependencies'
+      if: ${{ inputs.install-dependencies == 'true' }}
       shell: bash
       run: pnpm install

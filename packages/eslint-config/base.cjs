@@ -117,7 +117,7 @@ module.exports = {
     'no-useless-rename': 'error',
     'no-useless-return': 'error',
     'no-var': 'error',
-    'no-void': 'error',
+    'no-void': ['error', { allowAsStatement: true }],
     'object-shorthand': ['error', 'properties'],
     'one-var': ['error', 'never'],
     'operator-assignment': 'error',
@@ -156,7 +156,6 @@ module.exports = {
       'error',
       { ignoreArrowShorthand: true },
     ],
-    '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/no-use-before-define': [
@@ -209,8 +208,16 @@ module.exports = {
     {
       files: ['**/__tests__/**', '**/*.spec.ts'],
       rules: {
+        '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
         'sonarjs/no-duplicate-string': 'off',
+      },
+    },
+    // Rules that don't make sense for ambient type files
+    {
+      files: '**/*.d.ts',
+      rules: {
+        '@typescript-eslint/no-empty-interface': 'off',
       },
     },
   ],
