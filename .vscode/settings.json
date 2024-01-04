@@ -1,0 +1,18 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": [
+    "callees",
+    "camelcase",
+    "corepack",
+    "eslintconfig",
+    "falsey",
+    "isomorphically",
+    "nonconstructor",
+    "plusplus",
+    "prettierconfig",
+    "sonarjs",
+    "tailwindcss",
+    "viam",
+    "viamrobotics"
+  ]
+}

@@ -9,7 +9,7 @@ pnpm add --save-dev typescript @viamrobotics/typescript-config
 [viam]: https://www.viam.com/
 [typescript]: https://www.typescriptlang.org/
 
-### Base config
+## Base config
 
 Use the [base config](./tsconfig.base.json) for generic TypeScript projects, including code that runs natively in Node.js or isomorphically, in both Node.js and the browser.
 
