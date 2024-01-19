@@ -17,7 +17,8 @@ pnpm add --save-dev \
   eslint \
   eslint-config-prettier \
   eslint-plugin-sonarjs \
-  eslint-plugin-unicorn
+  eslint-plugin-unicorn \
+  eslint-plugin-vitest
 ```
 
 ```js
@@ -47,7 +48,8 @@ pnpm add --save-dev \
   eslint-plugin-sonarjs \
   eslint-plugin-svelte \
   eslint-plugin-tailwindcss \
-  eslint-plugin-unicorn
+  eslint-plugin-unicorn \
+  eslint-plugin-vitest
 ```
 
 ```js

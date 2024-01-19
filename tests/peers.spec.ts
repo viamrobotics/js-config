@@ -2,7 +2,7 @@
 import path from 'node:path';
 import url from 'node:url';
 import fs from 'node:fs';
-import { describe, test, expect } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import semver from 'semver';
 
 interface PackageJSON {
@@ -21,25 +21,22 @@ const getManifest = (pkgPath: string) =>
 describe('peer dependency specifications', () => {
   const { devDependencies } = getManifest('');
 
-  packages.forEach((packageName) => {
-    describe(packageName, () => {
-      const { peerDependencies } = getManifest(
-        path.join('packages', packageName)
-      );
+  describe.each(packages)('%s', (packageName) => {
+    const { peerDependencies } = getManifest(
+      path.join('packages', packageName)
+    );
+    const cases = Object.entries(peerDependencies).map(
+      ([dependencyName, peerRange]) => ({ dependencyName, peerRange })
+    );
 
-      Object.entries(peerDependencies).forEach(
-        ([dependencyName, peerRange]) => {
-          test(dependencyName, () => {
-            const devVersion = devDependencies[dependencyName];
+    it.each(cases)('$dependencyName', ({ dependencyName, peerRange }) => {
+      const devVersion = devDependencies[dependencyName];
 
-            expect(devVersion).toBeDefined();
-            expect(
-              semver.subset(devVersion!, peerRange),
-              `"${devVersion!}" should be within peer range "${peerRange}"`
-            ).toBe(true);
-          });
-        }
-      );
+      expect(devVersion).toBeDefined();
+      expect(
+        semver.subset(devVersion!, peerRange),
+        `"${devVersion!}" not within "${peerRange}"`
+      ).toBe(true);
     });
   });
 });
