@@ -48,13 +48,17 @@
     "eslint-plugin-sonarjs": ">=0.19 <0.24",
     "eslint-plugin-svelte": ">=2 <3",
     "eslint-plugin-tailwindcss": ">=3 <4",
-    "eslint-plugin-unicorn": ">=47 <51"
+    "eslint-plugin-unicorn": ">=47 <51",
+    "eslint-plugin-vitest": ">=0.3 <0.4"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-svelte": {
       "optional": true
     },
     "eslint-plugin-tailwindcss": {
+      "optional": true
+    },
+    "eslint-plugin-vitest": {
       "optional": true
     }
   }

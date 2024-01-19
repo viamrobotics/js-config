@@ -202,13 +202,40 @@ module.exports = {
         'unicorn/prefer-module': 'off',
       },
     },
-    // Relax rules that don't make sense for testing
+    // Rules for tests
     {
-      files: ['**/__tests__/**', '**/*.spec.ts'],
+      files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
+      extends: ['plugin:vitest/recommended'],
       rules: {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
         'sonarjs/no-duplicate-string': 'off',
+        'vitest/consistent-test-filename': [
+          'error',
+          {
+            pattern: '.*\\.spec\\.(ts|svelte)$',
+          },
+        ],
+        'vitest/consistent-test-it': ['error', { fn: 'it' }],
+        'vitest/no-conditional-expect': 'error',
+        'vitest/no-conditional-in-test': 'error',
+        'vitest/no-conditional-tests': 'error',
+        'vitest/no-restricted-matchers': [
+          'error',
+          {
+            toBeFalsey: 'Prefer `toBe` or `toEqual`',
+            toBeTruthy: 'Prefer `toBe` or `toEqual`',
+          },
+        ],
+        'vitest/no-restricted-vi-methods': [
+          'error',
+          {
+            spyOn: 'Do not partially mock objects',
+          },
+        ],
+        'vitest/prefer-each': 'error',
+        'vitest/require-top-level-describe': 'error',
+        'vitest/valid-expect': ['error', { maxArgs: 2 }],
       },
     },
     // Rules that don't make sense for ambient type files

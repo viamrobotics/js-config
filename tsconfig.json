@@ -2,7 +2,7 @@
   "extends": "@viamrobotics/typescript-config/base.json",
   "compilerOptions": {
     "types": ["node"],
-    "noEmit": true
+    "noEmit": true,
   },
-  "include": [".*", "tests/**/*"]
+  "include": [".*", "tests/**/*"],
 }
