@@ -210,6 +210,7 @@ module.exports = {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
         'sonarjs/no-duplicate-string': 'off',
+        'unicorn/consistent-function-scoping': 'off',
         'vitest/consistent-test-filename': [
           'error',
           {
