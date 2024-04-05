@@ -1,8 +1,9 @@
 /* eslint-disable unicorn/no-array-for-each */
+import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
-import fs from 'node:fs';
-import { describe, it, expect } from 'vitest';
+
+import { describe, expect, it } from 'vitest';
 import semver from 'semver';
 
 interface PackageJSON {
