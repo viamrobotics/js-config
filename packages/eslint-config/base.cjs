@@ -181,7 +181,7 @@ module.exports = {
           // Node.js builtins
           ['^node:'],
           // Third-party packages
-          ['^vitest', '^svelte', '^@?\\w'],
+          ['^vitest', '^svelte', '^@sveltejs', '^@?\\w'],
           // First-party packages
           ['^@viamrobotics'],
           // Anything not matched in another group, like internal $alias imports
