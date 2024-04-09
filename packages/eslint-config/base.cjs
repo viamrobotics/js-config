@@ -2,7 +2,7 @@
 
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'simple-import-sort'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/strict-type-checked',
@@ -170,6 +170,28 @@ module.exports = {
       },
     ],
     '@typescript-eslint/promise-function-async': 'error',
+
+    // Import sorting
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // Side effect imports
+          ['^\\u0000'],
+          // Node.js builtins
+          ['^node:'],
+          // Third-party packages
+          ['^vitest', '^svelte', '^@sveltejs', '^@?\\w'],
+          // First-party packages
+          ['^@viamrobotics'],
+          // Anything not matched in another group, like internal $alias imports
+          ['^'],
+          // Relative imports
+          ['^\\.'],
+        ],
+      },
+    ],
+    'simple-import-sort/exports': 'error',
 
     // Extra SonarJS rules
     'sonarjs/cognitive-complexity': ['error', 20],
