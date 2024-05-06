@@ -42,10 +42,7 @@ module.exports = {
     // Rules for tests
     {
       files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
-      extends: [
-        'plugin:jest-dom/recommended',
-        'plugin:testing-library/dom',
-      ],
+      extends: ['plugin:jest-dom/recommended', 'plugin:testing-library/dom'],
       rules: {
         'testing-library/await-async-events': [
           'error',
