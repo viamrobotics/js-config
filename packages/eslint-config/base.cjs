@@ -8,7 +8,7 @@ module.exports = {
     'plugin:@typescript-eslint/strict-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:unicorn/recommended',
-    'plugin:sonarjs/recommended',
+    'plugin:sonarjs/recommended-legacy',
     'prettier',
   ],
   parserOptions: {
@@ -230,7 +230,7 @@ module.exports = {
     // Rules for tests
     {
       files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
-      extends: ['plugin:vitest/recommended'],
+      extends: ['plugin:vitest/legacy-recommended'],
       rules: {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',

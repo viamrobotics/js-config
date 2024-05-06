@@ -43,7 +43,6 @@ module.exports = {
     {
       files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
       extends: [
-        'plugin:vitest/recommended',
         'plugin:jest-dom/recommended',
         'plugin:testing-library/dom',
       ],
