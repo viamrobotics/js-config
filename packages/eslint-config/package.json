@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Common ESLint configuration for Viam projects.",
   "files": [
     "**/*",
@@ -47,12 +47,12 @@
     "eslint-config-prettier": ">=9 <10",
     "eslint-plugin-jest-dom": ">=5 <6",
     "eslint-plugin-simple-import-sort": ">=12 <13",
-    "eslint-plugin-sonarjs": ">=0.19 <0.26",
+    "eslint-plugin-sonarjs": ">=1 <2",
     "eslint-plugin-svelte": ">=2 <3",
     "eslint-plugin-tailwindcss": ">=3 <4",
     "eslint-plugin-testing-library": ">=6 <7",
     "eslint-plugin-unicorn": ">=47 <53",
-    "eslint-plugin-vitest": ">=0.3 <0.5"
+    "eslint-plugin-vitest": ">=0.5 <0.6"
   },
   "peerDependenciesMeta": {
     "eslint-plugin-jest-dom": {
