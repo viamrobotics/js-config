@@ -177,17 +177,17 @@ module.exports = {
       {
         groups: [
           // Side effect imports
-          ['^\\u0000'],
+          [String.raw`^\u0000`],
           // Node.js builtins
           ['^node:'],
           // Third-party packages
-          ['^vitest', '^svelte', '^@sveltejs', '^@?\\w'],
+          ['^vitest', '^svelte', '^@sveltejs', String.raw`^@?\w`],
           // First-party packages
           ['^@viamrobotics'],
           // Anything not matched in another group, like internal $alias imports
           ['^'],
           // Relative imports
-          ['^\\.'],
+          [String.raw`^\.`],
         ],
       },
     ],
@@ -239,7 +239,7 @@ module.exports = {
         'vitest/consistent-test-filename': [
           'error',
           {
-            pattern: '.*\\.spec\\.(ts|svelte)$',
+            pattern: String.raw`.*\.spec\.(ts|svelte)$`,
           },
         ],
         'vitest/consistent-test-it': ['error', { fn: 'it' }],
