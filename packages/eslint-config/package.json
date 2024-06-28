@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Common ESLint configuration for Viam projects.",
   "files": [
     "**/*",
@@ -51,7 +51,7 @@
     "eslint-plugin-svelte": ">=2 <3",
     "eslint-plugin-tailwindcss": ">=3 <4",
     "eslint-plugin-testing-library": ">=6 <7",
-    "eslint-plugin-unicorn": ">=47 <53",
+    "eslint-plugin-unicorn": ">=47 <55",
     "eslint-plugin-vitest": ">=0.5 <0.6"
   },
   "peerDependenciesMeta": {
