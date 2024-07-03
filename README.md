@@ -2,16 +2,7 @@
 
 Shared configuration for JavaScript and TypeScript tools.
 
-## Libraries
-
-| Tool                          | NPM Module                        | Version                                   |
-| ----------------------------- | --------------------------------- | ----------------------------------------- |
-| [ESLint][eslint docs]         | `@viamrobotics/eslint-config`     | [![eslint version][]][eslint npm]         |
-| [Prettier][prettier docs]     | `@viamrobotics/prettier-config`   | [![prettier version][]][prettier npm]     |
-| [TypeScript][typescript docs] | `@viamrobotics/typescript-config` | [![typescript version][]][typescript npm] |
-
-[eslint docs]: ./packages/eslint-config
-[eslint npm]: https://www.npmjs.com/package/@viamrobotics/eslint-config
+## Librariesrobotics/eslint-config
 [eslint version]: https://img.shields.io/npm/v/@viamrobotics/eslint-config?style=flat-square
 [prettier docs]: ./packages/prettier-config
 [prettier npm]: https://www.npmjs.com/package/@viamrobotics/prettier-config
