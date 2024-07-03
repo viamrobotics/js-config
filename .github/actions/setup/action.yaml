@@ -22,7 +22,7 @@ runs:
       uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e # v4.0.0
 
     - name: 'Install Node.js ${{ inputs.node-version }}'
-      uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8 # v4.0.2
+      uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
       with:
         node-version: ${{ inputs.node-version }}
         registry-url: ${{ inputs.registry-url }}
