@@ -19,7 +19,7 @@
     "_prettier": "prettier \"**/*.{js,cjs,ts,json,yaml,md}\"",
     "_eslint": "eslint \".*.cjs\" \"**/*.{js,cjs,ts}\""
   },
-  "packageManager": "pnpm@9.1.0+sha256.22e36fba7f4880ecf749a5ca128b8435da085ecd49575e7fb9e64d6bf4fad394",
+  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
   "dependencies": {
     "@viamrobotics/eslint-config": "workspace:*",
     "@viamrobotics/prettier-config": "workspace:*",
