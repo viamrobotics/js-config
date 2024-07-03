@@ -1,8 +1,5 @@
 # Viam Shared JS/TS Config
 
-Shared configuration for JavaScript and TypeScript tools.
-
-## Libraries
 
 | Tool                          | NPM Module                        | Version                                   |
 | ----------------------------- | --------------------------------- | ----------------------------------------- |
