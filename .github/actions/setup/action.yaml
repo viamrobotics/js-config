@@ -19,10 +19,10 @@ runs:
   using: 'composite'
   steps:
     - name: 'Install pnpm'
-      uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e # v4.0.0
+      uses: pnpm/action-setup@fe02b34f77f8bc703788d5817da081398fad5dd2 # v4.0.0
 
     - name: 'Install Node.js ${{ inputs.node-version }}'
-      uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c # v3.6.0
+      uses: actions/setup-node@1e60f620b9541d16bece96c5465dc8ee9832be0b # v4.0.3
       with:
         node-version: ${{ inputs.node-version }}
         registry-url: ${{ inputs.registry-url }}
