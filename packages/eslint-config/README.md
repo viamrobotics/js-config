@@ -16,7 +16,6 @@ pnpm add --save-dev \
   @typescript-eslint/eslint-plugin \
   eslint \
   eslint-config-prettier \
-  eslint-plugin-sonarjs \
   eslint-plugin-unicorn \
   eslint-plugin-vitest
 ```
@@ -46,7 +45,6 @@ pnpm add --save-dev \
   eslint \
   eslint-config-prettier \
   eslint-plugin-jest-dom \
-  eslint-plugin-sonarjs \
   eslint-plugin-svelte \
   eslint-plugin-tailwindcss \
   eslint-plugin-testing-library \
