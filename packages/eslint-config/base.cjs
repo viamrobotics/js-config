@@ -8,7 +8,6 @@ module.exports = {
     'plugin:@typescript-eslint/strict-type-checked',
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:unicorn/recommended',
-    'plugin:sonarjs/recommended-legacy',
     'prettier',
   ],
   parserOptions: {
@@ -105,7 +104,7 @@ module.exports = {
     'no-template-curly-in-string': 'error',
     'no-unneeded-ternary': 'error',
     'no-unreachable-loop': 'error',
-    'no-underscore-dangle': ['error', { allow: ['__VERSION__'] }],
+    'no-underscore-dangle': ['error', { allow: ['__VERSION__', '_errors'] }],
     'no-unmodified-loop-condition': 'error',
     'no-unused-expressions': 'error',
     'no-unused-private-class-members': 'error',
@@ -122,13 +121,6 @@ module.exports = {
     'padding-line-between-statements': 'error',
     'prefer-arrow-callback': 'error',
     'prefer-const': 'error',
-    'prefer-destructuring': [
-      'error',
-      {
-        AssignmentExpression: { object: false, array: false },
-        VariableDeclarator: { object: true, array: true },
-      },
-    ],
     'prefer-exponentiation-operator': 'error',
     'prefer-named-capture-group': 'error',
     'prefer-numeric-literals': 'error',
@@ -154,6 +146,7 @@ module.exports = {
       'error',
       { ignoreArrowShorthand: true },
     ],
+    '@typescript-eslint/no-import-type-side-effects': ['error'],
     '@typescript-eslint/no-shadow': ['error'],
     '@typescript-eslint/no-unused-vars': [
       'warn',
@@ -170,6 +163,17 @@ module.exports = {
       },
     ],
     '@typescript-eslint/promise-function-async': 'error',
+    '@typescript-eslint/restrict-template-expressions': [
+      'error',
+      {
+        allowAny: false,
+        allowBoolean: true,
+        allowNever: false,
+        allowNullish: false,
+        allowNumber: true,
+        allowRegExp: false,
+      },
+    ],
 
     // Import sorting
     'simple-import-sort/imports': [
@@ -193,11 +197,7 @@ module.exports = {
     ],
     'simple-import-sort/exports': 'error',
 
-    // Extra SonarJS rules
-    'sonarjs/cognitive-complexity': ['error', 20],
-
     // Extra Unicorn rules
-    'unicorn/consistent-destructuring': 'off',
     'unicorn/custom-error-definition': 'error',
     'unicorn/no-null': 'off',
     'unicorn/no-unused-properties': 'error',
@@ -217,14 +217,11 @@ module.exports = {
         commonjs: true,
       },
       rules: {
+        '@typescript-eslint/no-require-imports': 'off',
+        '@typescript-eslint/no-unsafe-member-access': 'off',
+        '@typescript-eslint/no-unsafe-call': 'off',
+        '@typescript-eslint/no-unsafe-assignment': 'off',
         '@typescript-eslint/no-var-requires': 'off',
-      },
-    },
-    // __dirname and __filename are allowed in vite.config.ts
-    {
-      files: ['**/vite.config.ts', '**/vitest.config.ts'],
-      rules: {
-        'unicorn/prefer-module': 'off',
       },
     },
     // Rules for tests
@@ -234,7 +231,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-non-null-assertion': 'off',
         '@typescript-eslint/no-unsafe-assignment': 'off',
-        'sonarjs/no-duplicate-string': 'off',
+        '@typescript-eslint/restrict-template-expressions': 'off',
         'unicorn/consistent-function-scoping': 'off',
         'vitest/consistent-test-filename': [
           'error',
