@@ -19,14 +19,19 @@ pnpm add --save-dev prettier @viamrobotics/prettier-config-svelte
 export default '@viamrobotics/prettier-config-svelte';
 ```
 
-You can also extend the configuration:
+If the project is inside a monorepo, you'll need to specify the path to your Tailwind config.
 
 ```js
 // prettier.config.js
+import path from 'node:path';
+
 import baseConfig from '@viamrobotics/prettier-config-svelte';
 
-export default {
+/** @satisfies {import('prettier').Config} */
+const config = {
   ...baseConfig,
-  // other options here
+  tailwindConfig: path.join(import.meta.dirname, 'tailwind.config.ts'),
 };
+
+export default config;
 ```
