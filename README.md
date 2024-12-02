@@ -78,16 +78,13 @@ Once your development dependencies are installed, you can verify that all checks
 # run all checks and builds
 pnpm all
 
-# lint
+# lint and check formatting
 pnpm lint
 
-# check types
-pnpm check
-
-# auto format
+# resolve fixable lints and autoformat
 pnpm format
 
-# build all packages
+# check and build types
 pnpm build
 ```
 
