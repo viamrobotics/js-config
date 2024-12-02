@@ -43,7 +43,10 @@ Install Node.js, pnpm, and development dependencies
 
 ### Publish
 
-Publish a package to npm and add a tag to the repository
+Publish a package to npm and add a tag to the repository.
+
+> [!NOTE]
+> Prefer `pnpm publish --recursive` if you are publishing packages from a monorepo.
 
 ```yaml
 - name: Publish to npm
@@ -75,20 +78,17 @@ Once your development dependencies are installed, you can verify that all checks
 # run all checks and builds
 pnpm all
 
-# check lints
-pnpm check-lint
+# lint
+pnpm lint
 
 # check types
-pnpm check-types
+pnpm check
 
-# check formatting
-pnpm check-format
+# auto format
+pnpm format
 
 # build all packages
 pnpm build
-
-# auto-format (modifies files)
-pnpm format
 ```
 
 ### Releasing

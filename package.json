@@ -7,52 +7,40 @@
   "license": "Apache-2.0",
   "type": "module",
   "scripts": {
-    "all": "concurrently -g pnpm:check-* pnpm:test pnpm:build",
+    "all": "concurrently -g pnpm:lint pnpm:test pnpm:build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check-format": "pnpm run _prettier --check",
-    "check-lint": "pnpm run _eslint",
-    "check-types": "tsc",
-    "build": "pnpm run --recursive --aggregate-output build",
-    "format": "pnpm run _prettier --write && pnpm run _eslint --fix",
-    "update-dependencies": "pnpm update --recursive --interactive --latest",
-    "_prettier": "prettier \"**/*.{js,cjs,ts,json,yaml,md}\"",
-    "_eslint": "eslint \".*.cjs\" \"**/*.{js,cjs,ts}\""
+    "lint": "eslint . && prettier . --check",
+    "build": "tsc -b",
+    "format": "prettier . --write && eslint . --fix",
+    "update-dependencies": "pnpm update --recursive --interactive --latest"
   },
-  "packageManager": "pnpm@9.12.3+sha256.24235772cc4ac82a62627cd47f834c72667a2ce87799a846ec4e8e555e2d4b8b",
-  "dependencies": {
+  "packageManager": "pnpm@9.14.2+sha256.06e65a4965baff6d6097f9c8f75c35f6d420974dbc03d775009056a69edfd271",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/semver": "^7.5.8",
+    "@typescript-eslint/eslint-plugin": "^8.16.0",
+    "@typescript-eslint/parser": "^8.16.0",
     "@viamrobotics/eslint-config": "workspace:*",
     "@viamrobotics/prettier-config": "workspace:*",
-    "@viamrobotics/typescript-config": "workspace:*"
-  },
-  "devDependencies": {
-    "@types/node": "^22.9.0",
-    "@types/semver": "^7.5.8",
-    "@typescript-eslint/eslint-plugin": "^8.13.0",
-    "@typescript-eslint/parser": "^8.13.0",
+    "@viamrobotics/typescript-config": "workspace:*",
     "concurrently": "^9.1.0",
-    "eslint": "^8.57.0",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-jest-dom": "^5.4.0",
+    "eslint-plugin-jest-dom": "^5.5.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "eslint-plugin-svelte": "^2.46.0",
+    "eslint-plugin-svelte": "^2.46.1",
     "eslint-plugin-tailwindcss": "^3.17.5",
-    "eslint-plugin-testing-library": "^6.4.0",
-    "eslint-plugin-unicorn": "^56.0.0",
+    "eslint-plugin-testing-library": "^7.0.0",
+    "eslint-plugin-unicorn": "^56.0.1",
     "eslint-plugin-vitest": "^0.5.4",
-    "prettier": "^3.3.3",
-    "prettier-plugin-svelte": "^3.2.7",
-    "prettier-plugin-tailwindcss": "^0.6.8",
+    "prettier": "^3.4.1",
+    "prettier-plugin-svelte": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.9",
     "semver": "^7.6.3",
-    "typescript": "^5.6.3",
-    "vitest": "^2.1.4"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "ignoreMissing": [
-        "svelte",
-        "tailwindcss"
-      ]
-    }
+    "svelte": "^5.4.0",
+    "tailwindcss": "3.4.15",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }

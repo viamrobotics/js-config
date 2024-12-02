@@ -1,9 +1,10 @@
 {
   "name": "@viamrobotics/eslint-config",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Common ESLint configuration for Viam projects.",
   "files": [
     "**/*",
@@ -27,9 +28,6 @@
       "default": "./svelte.cjs"
     }
   },
-  "scripts": {
-    "build": "tsc"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/viamrobotics/js-config.git",
@@ -49,7 +47,7 @@
     "eslint-plugin-simple-import-sort": ">=12 <13",
     "eslint-plugin-svelte": ">=2 <3",
     "eslint-plugin-tailwindcss": ">=3 <4",
-    "eslint-plugin-testing-library": ">=6 <7",
+    "eslint-plugin-testing-library": ">=6 <8",
     "eslint-plugin-unicorn": ">=47 <57",
     "eslint-plugin-vitest": ">=0.5 <0.6"
   },

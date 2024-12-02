@@ -4,5 +4,9 @@
     "types": ["node"],
     "noEmit": true
   },
-  "include": [".*", "tests/**/*"]
+  "references": [
+    { "path": "./packages/eslint-config" },
+    { "path": "./packages/prettier-config" }
+  ],
+  "include": [".eslintrc.cjs", ".prettierrc.js", "./tests/**/*.ts"]
 }

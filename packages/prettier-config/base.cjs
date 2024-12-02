@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = {
+/** @satisfies {import('prettier').Config} */
+const config = {
   // overrides
   singleQuote: true,
   jsxSingleQuote: true,
@@ -22,3 +23,5 @@ module.exports = {
   endOfLine: 'lf',
   embeddedLanguageFormatting: 'auto',
 };
+
+module.exports = config;
