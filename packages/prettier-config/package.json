@@ -1,9 +1,10 @@
 {
   "name": "@viamrobotics/prettier-config",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Common Prettier configuration for Viam projects.",
   "type": "commonjs",
   "files": [
@@ -27,9 +28,6 @@
       "types": "./dist/svelte.d.cts",
       "default": "./svelte.cjs"
     }
-  },
-  "scripts": {
-    "build": "tsc"
   },
   "repository": {
     "type": "git",

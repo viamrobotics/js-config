@@ -2,9 +2,10 @@
   "extends": "@viamrobotics/typescript-config/base.json",
   "compilerOptions": {
     "types": ["node"],
+    "composite": true,
     "declaration": true,
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
-  "include": ["**/*.cjs"]
+  "include": ["*.cjs"]
 }

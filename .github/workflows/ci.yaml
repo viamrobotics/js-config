@@ -25,32 +25,21 @@ jobs:
     needs: [check]
     runs-on: ubuntu-latest
     permissions:
-      # write permission required to push tags
-      contents: write
+      contents: read
+      id-token: write
 
     steps:
       - uses: actions/checkout@v4
 
       - name: 'Install 🔧'
         uses: ./.github/actions/setup
+        with:
+          registry-url: https://registry.npmjs.org/
 
       - name: 'Build 🏗️'
         run: pnpm run build
 
-      - name: 'Publish ESLint config 🚀'
-        uses: ./.github/actions/publish
-        with:
-          package: ./packages/eslint-config
-          token: ${{ secrets.NPM_TOKEN }}
-
-      - name: 'Publish Prettier config 🚀'
-        uses: ./.github/actions/publish
-        with:
-          package: ./packages/prettier-config
-          token: ${{ secrets.NPM_TOKEN }}
-
-      - name: 'Publish TypeScript config 🚀'
-        uses: ./.github/actions/publish
-        with:
-          package: ./packages/typescript-config
-          token: ${{ secrets.NPM_TOKEN }}
+      - name: 'Publish 🚀'
+        run: pnpm publish --recursive
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
