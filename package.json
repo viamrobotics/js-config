@@ -19,8 +19,8 @@
   "devDependencies": {
     "@types/node": "^22.10.1",
     "@types/semver": "^7.5.8",
-    "@typescript-eslint/eslint-plugin": "^8.16.0",
-    "@typescript-eslint/parser": "^8.16.0",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
     "@viamrobotics/eslint-config": "workspace:*",
     "@viamrobotics/prettier-config": "workspace:*",
     "@viamrobotics/typescript-config": "workspace:*",
