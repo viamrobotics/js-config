@@ -6,7 +6,8 @@
   },
   "references": [
     { "path": "./packages/eslint-config" },
-    { "path": "./packages/prettier-config" }
+    { "path": "./packages/prettier-config" },
+    { "path": "./packages/prettier-config-svelte" }
   ],
-  "include": [".eslintrc.cjs", ".prettierrc.js", "./tests/**/*.ts"]
+  "include": [".eslintrc.cjs", "prettier.config.js", "./tests/**/*.ts"]
 }

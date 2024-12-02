@@ -1,0 +1,42 @@
+{
+  "name": "@viamrobotics/prettier-config-svelte",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "version": "1.0.0",
+  "description": "Viam's shared Prettier configuration for Svelte projects.",
+  "type": "module",
+  "files": [
+    "**/*",
+    "!tsconfig.json"
+  ],
+  "types": "./dist/prettier-config-svelte.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/prettier-config-svelte.d.ts",
+      "default": "./prettier-config-svelte.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viamrobotics/js-config.git",
+    "directory": "packages/prettier-config-svelte"
+  },
+  "keywords": [
+    "prettier",
+    "prettierconfig",
+    "svelte"
+  ],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "prettier": ">=3 <4",
+    "svelte": "*",
+    "tailwindcss": "*"
+  },
+  "dependencies": {
+    "@viamrobotics/prettier-config": "workspace:*",
+    "prettier-plugin-svelte": "^3.3.2",
+    "prettier-plugin-tailwindcss": "^0.6.9"
+  }
+}

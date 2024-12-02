@@ -62,12 +62,6 @@ importers:
       prettier:
         specifier: ^3.4.1
         version: 3.4.1
-      prettier-plugin-svelte:
-        specifier: ^3.3.2
-        version: 3.3.2(prettier@3.4.1)(svelte@5.4.0)
-      prettier-plugin-tailwindcss:
-        specifier: ^0.6.9
-        version: 0.6.9(prettier-plugin-svelte@3.3.2(prettier@3.4.1)(svelte@5.4.0))(prettier@3.4.1)
       semver:
         specifier: ^7.6.3
         version: 7.6.3
@@ -87,6 +81,18 @@ importers:
   packages/eslint-config: {}
 
   packages/prettier-config: {}
+
+  packages/prettier-config-svelte:
+    dependencies:
+      '@viamrobotics/prettier-config':
+        specifier: workspace:*
+        version: link:../prettier-config
+      prettier-plugin-svelte:
+        specifier: ^3.3.2
+        version: 3.3.2(prettier@3.4.1)(svelte@5.4.0)
+      prettier-plugin-tailwindcss:
+        specifier: ^0.6.9
+        version: 0.6.9(prettier-plugin-svelte@3.3.2(prettier@3.4.1)(svelte@5.4.0))(prettier@3.4.1)
 
   packages/typescript-config: {}
 
