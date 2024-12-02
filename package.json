@@ -12,7 +12,7 @@
     "test:watch": "vitest",
     "lint": "eslint . && prettier . --check",
     "build": "tsc -b",
-    "format": "prettier . --write && eslint . --fix",
+    "format": "eslint . --fix && prettier . --write",
     "update-dependencies": "pnpm update --recursive --interactive --latest"
   },
   "packageManager": "pnpm@9.14.2+sha256.06e65a4965baff6d6097f9c8f75c35f6d420974dbc03d775009056a69edfd271",
