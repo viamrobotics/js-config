@@ -1,5 +1,3 @@
-'use strict';
-
 /** @satisfies {import('prettier').Config} */
 const config = {
   // overrides
@@ -24,4 +22,4 @@ const config = {
   embeddedLanguageFormatting: 'auto',
 };
 
-module.exports = config;
+export default config;

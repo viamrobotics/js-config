@@ -12,7 +12,12 @@ interface PackageJSON {
 }
 
 const repo = path.join(url.fileURLToPath(import.meta.url), '../..');
-const packages = ['eslint-config', 'prettier-config', 'typescript-config'];
+const packages = [
+  'eslint-config',
+  'prettier-config',
+  'prettier-config-svelte',
+  'typescript-config',
+];
 
 const getManifest = (pkgPath: string) =>
   JSON.parse(
