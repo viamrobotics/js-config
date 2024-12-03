@@ -7,5 +7,6 @@
     "emitDeclarationOnly": true,
     "outDir": "dist"
   },
+  "references": [{ "path": "../eslint-config" }],
   "include": ["*.js"]
 }

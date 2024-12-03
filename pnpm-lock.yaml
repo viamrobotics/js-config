@@ -80,6 +80,12 @@ importers:
 
   packages/eslint-config: {}
 
+  packages/eslint-config-svelte:
+    dependencies:
+      '@viamrobotics/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+
   packages/prettier-config: {}
 
   packages/prettier-config-svelte:

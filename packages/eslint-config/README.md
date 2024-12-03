@@ -1,4 +1,4 @@
-# Shared ESLint Config for Viam
+# Viam's ESLint Config
 
 This module contains [Viam][]'s shared [ESLint][] configurations for ESLint v8.
 
@@ -7,15 +7,16 @@ This module contains [Viam][]'s shared [ESLint][] configurations for ESLint v8.
 
 ## Base config
 
-Use the [base config](./base.cjs) for vanilla JavaScript / TypeScript projects. Be sure to add your `tsconfig.json` files to `parserOptions.project` and `settings['import/resolver'].typescript.project`.
+Extend the [config](./eslint-config.js) in `.eslintrc.cjs`.
 
 ```shell
 pnpm add --save-dev \
+  eslint@^8.56.0 \
   @viamrobotics/eslint-config \
   @typescript-eslint/parser \
   @typescript-eslint/eslint-plugin \
-  eslint \
   eslint-config-prettier \
+  eslint-plugin-simple-import-sort \
   eslint-plugin-unicorn \
   eslint-plugin-vitest
 ```
@@ -28,39 +29,12 @@ module.exports = {
   root: true,
   extends: ['@viamrobotics/eslint-config'],
   parserOptions: {
-    project: ['./tsconfig.json'],
+    tsconfigRootDir: __dirname,
+    projectService: true,
   },
 };
 ```
 
 ## Svelte config
 
-Use the [Svelte config](./svelte.cjs) for Svelte projects.
-
-```shell
-pnpm add --save-dev \
-  @viamrobotics/eslint-config \
-  @typescript-eslint/parser \
-  @typescript-eslint/eslint-plugin \
-  eslint \
-  eslint-config-prettier \
-  eslint-plugin-jest-dom \
-  eslint-plugin-svelte \
-  eslint-plugin-tailwindcss \
-  eslint-plugin-testing-library \
-  eslint-plugin-unicorn \
-  eslint-plugin-vitest
-```
-
-```js
-// .eslintrc.cjs
-'use strict';
-
-module.exports = {
-  root: true,
-  extends: ['@viamrobotics/eslint-config/svelte'],
-  parserOptions: {
-    project: ['./tsconfig.json'],
-  },
-};
-```
+See [@viamrobotics/eslint-config-svelte](../eslint-config-svelte/)
