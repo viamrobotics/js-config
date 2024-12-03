@@ -4,13 +4,9 @@
     "access": "public",
     "provenance": true
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Viam's shared Prettier configuration for Svelte projects.",
   "type": "module",
-  "files": [
-    "**/*",
-    "!tsconfig.json"
-  ],
   "types": "./dist/prettier-config-svelte.d.ts",
   "exports": {
     ".": {
