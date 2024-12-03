@@ -16,13 +16,13 @@ Shared configuration for JavaScript and TypeScript tools.
 [eslint npm]: https://www.npmjs.com/package/@viamrobotics/eslint-config
 [eslint version]: https://img.shields.io/npm/v/@viamrobotics/eslint-config?style=flat-square
 [eslint-svelte docs]: ./packages/eslint-config-svelte
-[eslint-svelte npm]: https://www.npmjs.com/package/@viamrobotics/eslint-config
-[eslint-svelte version]: https://img.shields.io/npm/v/@viamrobotics/eslint-config?style=flat-square
+[eslint-svelte npm]: https://www.npmjs.com/package/@viamrobotics/eslint-config-svelte
+[eslint-svelte version]: https://img.shields.io/npm/v/@viamrobotics/eslint-config-svelte?style=flat-square
 [prettier docs]: ./packages/prettier-config
 [prettier npm]: https://www.npmjs.com/package/@viamrobotics/prettier-config
 [prettier version]: https://img.shields.io/npm/v/@viamrobotics/prettier-config?style=flat-square
 [prettier-svelte docs]: ./packages/prettier-config-svelte
-[prettier-svelte npm]: https://www.npmjs.com/package/@viamrobotics/prettier-config-sveltes
+[prettier-svelte npm]: https://www.npmjs.com/package/@viamrobotics/prettier-config-svelte
 [prettier-svelte version]: https://img.shields.io/npm/v/@viamrobotics/prettier-config-svelte?style=flat-square
 [typescript docs]: ./packages/typescript-config
 [typescript npm]: https://www.npmjs.com/package/@viamrobotics/typescript-config
