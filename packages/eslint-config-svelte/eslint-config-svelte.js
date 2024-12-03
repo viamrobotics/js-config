@@ -1,6 +1,6 @@
 'use strict';
 
-const baseConfig = require('./base.cjs');
+const baseConfig = require('@viamrobotics/eslint-config');
 
 module.exports = {
   ...baseConfig,
@@ -11,6 +11,12 @@ module.exports = {
     'plugin:svelte/prettier',
   ],
   settings: {
+    svelte: {
+      ignoreWarnings: [
+        '@typescript-eslint/no-unsafe-assignment',
+        '@typescript-eslint/no-unsafe-member-access',
+      ],
+    },
     tailwindcss: {
       callees: ['classnames', 'cx'],
       classRegex: '^(?:class|cx)$',
@@ -29,6 +35,8 @@ module.exports = {
         parser: '@typescript-eslint/parser',
       },
       rules: {
+        // Redundant with `svelte-check` and build
+        'svelte/valid-compile': 'off',
         // Allows us to set option props to `undefined` by default
         'no-undef-init': 'off',
       },

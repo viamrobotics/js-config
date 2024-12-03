@@ -14,6 +14,7 @@ interface PackageJSON {
 const repo = path.join(url.fileURLToPath(import.meta.url), '../..');
 const packages = [
   'eslint-config',
+  'eslint-config-svelte',
   'prettier-config',
   'prettier-config-svelte',
   'typescript-config',

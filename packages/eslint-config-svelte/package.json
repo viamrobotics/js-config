@@ -1,0 +1,46 @@
+{
+  "name": "@viamrobotics/eslint-config-svelte",
+  "publishConfig": {
+    "access": "public"
+  },
+  "version": "0.8.0",
+  "description": "ESLint configuration for Svelte projects at Viam.",
+  "type": "commonjs",
+  "main": "./eslint-config-svelte.js",
+  "types": "./dist/eslint-config-svelte.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/eslint-config-svelte.d.ts",
+      "default": "./eslint-config-svelte.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viamrobotics/js-config.git",
+    "directory": "packages/eslint-config-svelte"
+  },
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "svelte"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@viamrobotics/eslint-config": "workspace:*"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=6 <9",
+    "@typescript-eslint/parser": ">=6 <9",
+    "eslint": ">=8 <9",
+    "eslint-config-prettier": ">=9 <10",
+    "eslint-plugin-jest-dom": ">=5 <6",
+    "eslint-plugin-simple-import-sort": ">=12 <13",
+    "eslint-plugin-svelte": ">=2 <3",
+    "eslint-plugin-tailwindcss": ">=3 <4",
+    "eslint-plugin-testing-library": ">=6 <8",
+    "eslint-plugin-unicorn": ">=47 <57",
+    "eslint-plugin-vitest": ">=0.5 <0.6",
+    "typescript": ">=5 <6",
+    "vitest": "*"
+  }
+}
