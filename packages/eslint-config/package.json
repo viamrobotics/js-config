@@ -4,15 +4,15 @@
     "access": "public",
     "provenance": true
   },
-  "version": "0.8.0",
+  "version": "1.0.0",
   "description": "ESLint configuration for projects at Viam.",
   "type": "commonjs",
-  "main": "./eslint-config.js",
-  "types": "./dist/eslint-config.d.ts",
+  "main": "./eslint-config.mjs",
+  "types": "./dist/eslint-config.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/eslint-config.d.ts",
-      "default": "./eslint-config.js"
+      "types": "./dist/eslint-config.d.mts",
+      "default": "./eslint-config.mjs"
     }
   },
   "repository": {
@@ -26,13 +26,15 @@
   ],
   "license": "Apache-2.0",
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=6 <9",
-    "@typescript-eslint/parser": ">=6 <9",
-    "eslint": ">=8 <9",
-    "eslint-config-prettier": ">=9 <10",
+    "@typescript-eslint/eslint-plugin": ">=8 <9",
+    "@typescript-eslint/parser": ">=8 <9",
+    "@eslint/eslintrc": ">=3 <4",
+    "@eslint/js": ">=9 <10",
+    "eslint-config-prettier": ">=10 <11",
     "eslint-plugin-simple-import-sort": ">=12 <13",
     "eslint-plugin-unicorn": ">=47 <57",
     "eslint-plugin-vitest": ">=0.5 <0.6",
+    "globals": ">=15 <16",
     "typescript": ">=5 <6",
     "vitest": "*"
   },

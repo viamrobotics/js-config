@@ -8,7 +8,7 @@ This module contains [Viam][]'s shared [ESLint][] configurations for ESLint v8 i
 
 ## Base config
 
-Extend the [config](./eslint-config-svelte.js) in `.eslintrc.cjs`.
+Extend the [config](./eslint-config-svelte.mjs) in `.eslintrc.cjs`.
 
 ```shell
 pnpm add --save-dev \

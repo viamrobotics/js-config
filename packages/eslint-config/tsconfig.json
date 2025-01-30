@@ -5,7 +5,8 @@
     "composite": true,
     "declaration": true,
     "emitDeclarationOnly": true,
-    "outDir": "dist"
+    "outDir": "dist",
+    "moduleResolution": "bundler"
   },
-  "include": ["*.js"]
+  "include": ["*.js", "eslint-config.mjs"]
 }
