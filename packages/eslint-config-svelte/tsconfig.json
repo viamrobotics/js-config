@@ -8,5 +8,5 @@
     "outDir": "dist"
   },
   "references": [{ "path": "../eslint-config" }],
-  "include": ["*.js"]
+  "include": ["*.js", "eslint-config-svelte.js"]
 }

@@ -6,12 +6,12 @@
   "version": "0.8.0",
   "description": "ESLint configuration for Svelte projects at Viam.",
   "type": "commonjs",
-  "main": "./eslint-config-svelte.js",
-  "types": "./dist/eslint-config-svelte.d.ts",
+  "main": "./eslint-config-svelte.mjs",
+  "types": "./dist/eslint-config-svelte.d.mts",
   "exports": {
     ".": {
-      "types": "./dist/eslint-config-svelte.d.ts",
-      "default": "./eslint-config-svelte.js"
+      "types": "./dist/eslint-config-svelte.d.mts",
+      "default": "./eslint-config-svelte.mjs"
     }
   },
   "repository": {
