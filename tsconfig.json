@@ -10,5 +10,5 @@
     { "path": "./packages/prettier-config" },
     { "path": "./packages/prettier-config-svelte" }
   ],
-  "include": [".eslintrc.cjs", "prettier.config.js", "./tests/**/*.ts"]
+  "include": ["eslint.config.js", "prettier.config.js", "./tests/**/*.ts"]
 }

@@ -31,7 +31,7 @@
     "tailwindcss": "*"
   },
   "dependencies": {
-    "@viamrobotics/prettier-config": "workspace:*",
+    "@viamrobotics/prettier-config": "workspace:^",
     "prettier-plugin-svelte": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.9"
   }
