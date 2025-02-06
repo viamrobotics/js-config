@@ -155,6 +155,7 @@ const config = ts.config(
         { ignoreArrowShorthand: true },
       ],
       '@typescript-eslint/no-import-type-side-effects': ['error'],
+      '@typescript-eslint/no-misused-spread': ['error', { allow: ['string'] }],
       '@typescript-eslint/no-shadow': ['error'],
       '@typescript-eslint/no-unused-vars': [
         'warn',
