@@ -26,14 +26,11 @@ import {
   createConfig,
 } from '@viamrobotics/eslint-config-svelte';
 
-import svelteConfig from './svelte.config.js';
-
 export default createConfig(
   baseSvelteConfig,
   {
     languageOptions: {
       parserOptions: {
-        svelteConfig,
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
       },
