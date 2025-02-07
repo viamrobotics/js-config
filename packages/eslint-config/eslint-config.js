@@ -6,15 +6,17 @@ import unicorn from 'eslint-plugin-unicorn';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 
+const createConfig = ts.config;
+
 /**
  * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray} ConfigArray
  */
 
-/** @type {ConfigArray} */
-const config = ts.config(
+/** @satisfies {ConfigArray} */
+const baseConfig = createConfig(
   js.configs.recommended,
-  ...ts.configs.strictTypeChecked,
-  ...ts.configs.stylisticTypeChecked,
+  ts.configs.strictTypeChecked,
+  ts.configs.stylisticTypeChecked,
   unicorn.configs['flat/recommended'],
 
   {
@@ -249,7 +251,7 @@ const config = ts.config(
   // Tests
   {
     name: 'viam/vitest',
-    ...vitest.configs.recommended,
+    extends: [vitest.configs.recommended],
     files: [
       '**/__tests__/**/*.test.ts',
       '**/__tests__/**/*.spec.ts',
@@ -257,7 +259,6 @@ const config = ts.config(
       '**/tests/**/*.spec.ts',
     ],
     rules: {
-      ...vitest.configs.recommended.rules,
       '@typescript-eslint/no-non-null-assertion': 'off',
       '@typescript-eslint/no-unsafe-assignment': 'off',
       '@typescript-eslint/restrict-template-expressions': 'off',
@@ -287,7 +288,6 @@ const config = ts.config(
     },
   },
 
-  // Rules that don't make sense for ambient type files
   {
     name: 'viam/ambient-types',
     files: ['**/*.d.ts'],
@@ -300,4 +300,4 @@ const config = ts.config(
   prettier
 );
 
-export default config;
+export { baseConfig, createConfig };

@@ -6,7 +6,7 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 
-import baseConfig from '@viamrobotics/eslint-config';
+import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
 
 const extraFileExtensions = ['.svelte'];
 
@@ -15,7 +15,7 @@ const extraFileExtensions = ['.svelte'];
  */
 
 /** @satisfies {ConfigArray} */
-const config = ts.config(
+const baseSvelteConfig = createConfig(
   baseConfig,
   tailwind.configs['flat/recommended'],
   svelte.configs['flat/recommended'],
@@ -79,14 +79,11 @@ const config = ts.config(
   },
 
   {
-    ...jestDOM.configs['flat/recommended'],
-    name: 'viam/svelte/jest-dom',
-    files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
-  },
-
-  {
-    ...testingLibrary.configs['flat/dom'],
-    name: 'viam/svelte/testing-library',
+    name: 'viam/svelte/component-testing',
+    extends: [
+      jestDOM.configs['flat/recommended'],
+      testingLibrary.configs['flat/dom'],
+    ],
     files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
     rules: {
       ...testingLibrary.configs['flat/dom'].rules,
@@ -108,4 +105,5 @@ const config = ts.config(
   }
 );
 
-export default config;
+export { baseSvelteConfig };
+export { createConfig } from '@viamrobotics/eslint-config';

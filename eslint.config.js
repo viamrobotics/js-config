@@ -1,7 +1,7 @@
-import baseConfig from '@viamrobotics/eslint-config';
+import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
 
-export default [
-  ...baseConfig,
+export default createConfig(
+  baseConfig,
   {
     languageOptions: {
       parserOptions: {
@@ -12,5 +12,5 @@ export default [
   },
   {
     ignores: ['**/dist/**'],
-  },
-];
+  }
+);
