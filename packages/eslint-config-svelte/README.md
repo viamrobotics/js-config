@@ -1,6 +1,6 @@
 # Viam's ESLint Config for Svelte
 
-This module contains [Viam][]'s shared [ESLint][] configurations for ESLint v8 in [Svelte][] projects.
+This module contains [Viam][]'s shared [ESLint][] configurations for ESLint v9 in [Svelte][] projects.
 
 [viam]: https://www.viam.com/
 [eslint]: https://eslint.org/
@@ -8,36 +8,42 @@ This module contains [Viam][]'s shared [ESLint][] configurations for ESLint v8 i
 
 ## Base config
 
-Extend the [config](./eslint-config-svelte.js) in `.eslintrc.cjs`.
+Extend the [config](./eslint-config-svelte.js) in `eslint.config.js`.
+
+> [!TIP]
+> See the typescript-eslint docs on [type-aware linting](https://typescript-eslint.io/getting-started/typed-linting) to learn about how to configure `languageOptions`. Using `projectService: true` is recommended for new projects, but older projects may continue to use `project: './tsconfig.json'` for performance or compatibility reasons.
 
 ```shell
-pnpm add --save-dev \
-  eslint@^8.56.0 \
-  @viamrobotics/eslint-config-svelte \
-  @typescript-eslint/parser \
-  @typescript-eslint/eslint-plugin \
-  eslint-config-prettier \
-  eslint-plugin-jest-dom \
-  eslint-plugin-simple-import-sort \
-  eslint-plugin-svelte \
-  eslint-plugin-tailwindcss \
-  eslint-plugin-testing-library \
-  eslint-plugin-unicorn \
-  eslint-plugin-vitest
+pnpm add --save-dev eslint @viamrobotics/eslint-config-svelte
 ```
 
 ```js
-// .eslintrc.cjs
-'use strict';
+// eslint.config.js
+import path from 'node:path';
 
-module.exports = {
-  root: true,
-  extends: ['@viamrobotics/eslint-config-svelte'],
-  parserOptions: {
-    tsconfigRootDir: __dirname,
-    projectService: true,
+import {
+  baseSvelteConfig,
+  createConfig,
+} from '@viamrobotics/eslint-config-svelte';
+
+import svelteConfig from './svelte.config.js';
+
+export default createConfig(
+  baseSvelteConfig,
+  {
+    languageOptions: {
+      parserOptions: {
+        svelteConfig,
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    settings: {
+      tailwindcss: {
+        config: path.join(import.meta.dirname, 'tailwind.config.ts'),
+      },
+    },
   },
-};
 ```
 
 ## Non-Svelte projects
