@@ -17,8 +17,8 @@ const config = ts.config(
   ...ts.configs.stylisticTypeChecked,
   unicorn.configs['flat/recommended'],
 
-  // Extra vanilla rules
   {
+    name: 'viam/base',
     rules: {
       'accessor-pairs': ['error'],
       'array-callback-return': ['error', { checkForEach: true }],
@@ -146,8 +146,8 @@ const config = ts.config(
     },
   },
 
-  // Extra TypeScript rules
   {
+    name: 'viam/typescript',
     rules: {
       '@typescript-eslint/return-await': 'error',
       '@typescript-eslint/no-confusing-void-expression': [
@@ -186,8 +186,8 @@ const config = ts.config(
     },
   },
 
-  // Extra Unicorn rules
   {
+    name: 'viam/unicorn',
     rules: {
       'unicorn/custom-error-definition': 'error',
       'unicorn/no-null': 'off',
@@ -201,6 +201,7 @@ const config = ts.config(
 
   // Import sorting
   {
+    name: 'viam/import-sort',
     plugins: {
       'simple-import-sort': simpleImportSort,
     },
@@ -230,6 +231,7 @@ const config = ts.config(
 
   // Common JS support
   {
+    name: 'viam/commonjs',
     files: ['**/*.cjs'],
     languageOptions: {
       sourceType: 'commonjs',
@@ -246,8 +248,9 @@ const config = ts.config(
 
   // Tests
   {
+    name: 'viam/vitest',
     ...vitest.configs.recommended,
-    files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
+    files: ['**/__tests__/**/*.test.ts', '**/__tests__/**/*.spec.ts'],
     rules: {
       ...vitest.configs.recommended.rules,
       '@typescript-eslint/no-non-null-assertion': 'off',
@@ -281,6 +284,7 @@ const config = ts.config(
 
   // Rules that don't make sense for ambient type files
   {
+    name: 'viam/ambient-types',
     files: ['**/*.d.ts'],
     rules: {
       '@typescript-eslint/no-empty-interface': 'off',

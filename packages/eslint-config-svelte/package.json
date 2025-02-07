@@ -26,12 +26,13 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@typescript-eslint/utils": "^8.23.0",
+    "@typescript-eslint/utils": "~8.23.0",
     "@viamrobotics/eslint-config": "workspace:^",
     "eslint-plugin-jest-dom": "~5.5.0",
-    "eslint-plugin-svelte": "~2.46.1",
+    "eslint-plugin-svelte": "~3.0.0 || ~3.0.0-next",
     "eslint-plugin-tailwindcss": "~3.17.5",
     "eslint-plugin-testing-library": "~7.1.1",
+    "globals": "^15.13.0",
     "typescript-eslint": "~8.23.0"
   },
   "peerDependencies": {

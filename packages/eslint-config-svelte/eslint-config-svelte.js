@@ -3,6 +3,7 @@ import jestDOM from 'eslint-plugin-jest-dom';
 import svelte from 'eslint-plugin-svelte';
 import tailwind from 'eslint-plugin-tailwindcss';
 import testingLibrary from 'eslint-plugin-testing-library';
+import globals from 'globals';
 import ts from 'typescript-eslint';
 
 import baseConfig from '@viamrobotics/eslint-config';
@@ -13,7 +14,7 @@ const extraFileExtensions = ['.svelte'];
  * @typedef {import('@viamrobotics/eslint-config').ConfigArray} ConfigArray
  */
 
-/** @type {ConfigArray} */
+/** @satisfies {ConfigArray} */
 const config = ts.config(
   baseConfig,
   tailwind.configs['flat/recommended'],
@@ -22,8 +23,12 @@ const config = ts.config(
 
   // Base options and settings
   {
+    name: 'viam/svelte/base',
     languageOptions: {
       parserOptions: { extraFileExtensions },
+      globals: {
+        ...globals.browser,
+      },
     },
     settings: {
       svelte: {
@@ -37,32 +42,51 @@ const config = ts.config(
         classRegex: '^(?:class|cx)$',
       },
     },
+    rules: {
+      // Too many false positives
+      'svelte/require-stores-init': 'off',
+    },
   },
 
-  // Svelte
   {
+    name: 'viam/svelte/svelte-base',
     files: ['**/*.svelte'],
     languageOptions: {
       parser: svelteParser,
-      parserOptions: { parser: ts.parser, extraFileExtensions },
+      parserOptions: {
+        parser: ts.parser,
+        extraFileExtensions,
+        svelteFeatures: {
+          experimentalGenerics: true,
+        },
+      },
     },
     rules: {
-      // Redundant with `svelte-check` and build
-      'svelte/valid-compile': 'off',
       // Allows us to set option props to `undefined` by default
       'no-undef-init': 'off',
     },
   },
 
-  // Testing Library DOM assertions
+  {
+    name: 'viam/svelte/modules',
+    files: ['**/*.svelte.ts', '*.svelte.ts'],
+    languageOptions: {
+      parser: svelteParser,
+      parserOptions: {
+        parser: ts.parser,
+      },
+    },
+  },
+
   {
     ...jestDOM.configs['flat/recommended'],
+    name: 'viam/svelte/jest-dom',
     files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
   },
 
-  // Testing Library usage
   {
     ...testingLibrary.configs['flat/dom'],
+    name: 'viam/svelte/testing-library',
     files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
     rules: {
       ...testingLibrary.configs['flat/dom'].rules,
