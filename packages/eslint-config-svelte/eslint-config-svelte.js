@@ -14,7 +14,7 @@ const extraFileExtensions = ['.svelte'];
  * @typedef {import('@viamrobotics/eslint-config').ConfigArray} ConfigArray
  */
 
-/** @satisfies {ConfigArray} */
+/** @type {ConfigArray} */
 const baseSvelteConfig = createConfig(
   baseConfig,
   tailwind.configs['flat/recommended'],

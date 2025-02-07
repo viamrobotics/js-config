@@ -12,7 +12,7 @@ const createConfig = ts.config;
  * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray} ConfigArray
  */
 
-/** @satisfies {ConfigArray} */
+/** @type {ConfigArray} */
 const baseConfig = createConfig(
   js.configs.recommended,
   ts.configs.strictTypeChecked,
