@@ -1,4 +1,3 @@
-import * as svelteParser from 'svelte-eslint-parser';
 import jestDOM from 'eslint-plugin-jest-dom';
 import svelte from 'eslint-plugin-svelte';
 import tailwind from 'eslint-plugin-tailwindcss';
@@ -7,8 +6,6 @@ import globals from 'globals';
 import ts from 'typescript-eslint';
 
 import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
-
-const extraFileExtensions = ['.svelte'];
 
 /**
  * @typedef {import('@viamrobotics/eslint-config').ConfigArray} ConfigArray
@@ -25,7 +22,13 @@ const baseSvelteConfig = createConfig(
   {
     name: 'viam/svelte/base',
     languageOptions: {
-      parserOptions: { extraFileExtensions },
+      parserOptions: {
+        parser: ts.parser,
+        extraFileExtensions: ['.svelte'],
+        svelteFeatures: {
+          experimentalGenerics: true,
+        },
+      },
       globals: {
         ...globals.browser,
       },
@@ -51,30 +54,9 @@ const baseSvelteConfig = createConfig(
   {
     name: 'viam/svelte/svelte-base',
     files: ['**/*.svelte'],
-    languageOptions: {
-      parser: svelteParser,
-      parserOptions: {
-        parser: ts.parser,
-        extraFileExtensions,
-        svelteFeatures: {
-          experimentalGenerics: true,
-        },
-      },
-    },
     rules: {
       // Allows us to set option props to `undefined` by default
       'no-undef-init': 'off',
-    },
-  },
-
-  {
-    name: 'viam/svelte/modules',
-    files: ['**/*.svelte.ts', '*.svelte.ts'],
-    languageOptions: {
-      parser: svelteParser,
-      parserOptions: {
-        parser: ts.parser,
-      },
     },
   },
 
