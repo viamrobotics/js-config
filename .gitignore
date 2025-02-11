@@ -1,6 +1,4 @@
 node_modules
 dist
-*.d.cts
-*.d.ts
 *.tgz
 *.tsbuildinfo

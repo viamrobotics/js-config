@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/no-array-for-each */
 import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
