@@ -46,7 +46,8 @@ const baseSvelteConfig = createConfig(
       },
     },
     rules: {
-      // Too many false positives
+      // TODO(mc, 2024-02-14): Too many false positives
+      // https://github.com/sveltejs/eslint-plugin-svelte/issues/1073
       'svelte/require-stores-init': 'off',
     },
   },
@@ -57,6 +58,14 @@ const baseSvelteConfig = createConfig(
     rules: {
       // Allows us to set option props to `undefined` by default
       'no-undef-init': 'off',
+
+      // TODO(mc, 2024-11-06): False positive with props
+      // https://github.com/sveltejs/eslint-plugin-svelte/issues/476
+      '@typescript-eslint/no-unnecessary-condition': 'off',
+
+      // Svelte ESLint parser does not type snippets correctly
+      // https://github.com/sveltejs/svelte-eslint-parser/issues/657
+      '@typescript-eslint/no-confusing-void-expression': 'off',
     },
   },
 

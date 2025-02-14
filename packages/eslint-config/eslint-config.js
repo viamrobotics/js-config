@@ -268,6 +268,10 @@ const baseConfig = createConfig(
         { pattern: String.raw`.*\.spec\.(ts|svelte)$` },
       ],
       'vitest/consistent-test-it': ['error', { fn: 'it' }],
+      'vitest/expect-expect': [
+        'error',
+        { assertFunctionNames: ['expect', 'expect*'] },
+      ],
       'vitest/no-conditional-expect': 'error',
       'vitest/no-conditional-in-test': 'error',
       'vitest/no-conditional-tests': 'error',
