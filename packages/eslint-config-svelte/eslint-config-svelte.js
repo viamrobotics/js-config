@@ -66,6 +66,10 @@ const baseSvelteConfig = createConfig(
       // Svelte ESLint parser does not type snippets correctly
       // https://github.com/sveltejs/svelte-eslint-parser/issues/657
       '@typescript-eslint/no-confusing-void-expression': 'off',
+
+      // Svelte ESLint parser can lose function prop types
+      // https://github.com/sveltejs/svelte-eslint-parser/issues/608
+      '@typescript-eslint/no-unsafe-call': 'off',
     },
   },
 
