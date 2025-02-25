@@ -54,7 +54,7 @@ const baseSvelteConfig = createConfig(
 
   {
     name: 'viam/svelte/svelte-base',
-    files: ['**/*.svelte'],
+    files: ['**/*.svelte', '**/*.svelte.ts'],
     rules: {
       // Allows us to set option props to `undefined` by default
       'no-undef-init': 'off',
@@ -70,6 +70,9 @@ const baseSvelteConfig = createConfig(
       // Svelte ESLint parser can lose function prop types
       // https://github.com/sveltejs/svelte-eslint-parser/issues/608
       '@typescript-eslint/no-unsafe-call': 'off',
+
+      // Svelte ESLint parser can lose types with $props.id() and other runes
+      '@typescript-eslint/no-unsafe-assignment': 'off',
     },
   },
 
