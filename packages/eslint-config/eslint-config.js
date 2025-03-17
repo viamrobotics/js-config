@@ -126,7 +126,7 @@ const baseConfig = createConfig(
       'operator-assignment': 'error',
       'padding-line-between-statements': 'error',
       'prefer-arrow-callback': 'error',
-      'prefer-const': 'error',
+      'prefer-const': ['error', { destructuring: 'all' }],
       'prefer-exponentiation-operator': 'error',
       'prefer-named-capture-group': 'error',
       'prefer-numeric-literals': 'error',
