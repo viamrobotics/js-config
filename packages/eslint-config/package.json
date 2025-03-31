@@ -4,7 +4,7 @@
     "access": "public",
     "provenance": true
   },
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ESLint configuration for projects at Viam.",
   "type": "module",
   "main": "./eslint-config.js",
