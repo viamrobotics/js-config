@@ -15,22 +15,22 @@
     "format": "eslint . --fix && prettier . --write",
     "update-dependencies": "pnpm update --recursive --interactive --latest"
   },
-  "packageManager": "pnpm@9.14.2+sha256.06e65a4965baff6d6097f9c8f75c35f6d420974dbc03d775009056a69edfd271",
+  "packageManager": "pnpm@10.7.1+sha512.2d92c86b7928dc8284f53494fb4201f983da65f0fb4f0d40baafa5cf628fa31dae3e5968f12466f17df7e97310e30f343a648baea1b9b350685dafafffdf5808",
   "devDependencies": {
-    "@types/node": "^22.13.1",
-    "@types/semver": "^7.5.8",
-    "@typescript-eslint/eslint-plugin": "^8.23.0",
-    "@typescript-eslint/parser": "^8.23.0",
+    "@types/node": "^22.14.0",
+    "@types/semver": "^7.7.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.0",
+    "@typescript-eslint/parser": "^8.29.0",
     "@viamrobotics/eslint-config": "workspace:*",
     "@viamrobotics/prettier-config": "workspace:*",
     "@viamrobotics/typescript-config": "workspace:*",
     "concurrently": "^9.1.2",
-    "eslint": "^9.20.0",
-    "prettier": "^3.5.0",
+    "eslint": "^9.24.0",
+    "prettier": "^3.5.3",
     "semver": "^7.7.1",
-    "svelte": "^5.19.9",
+    "svelte": "^5.25.7",
     "tailwindcss": "3.4.16",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.5"
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
   }
 }
