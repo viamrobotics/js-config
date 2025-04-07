@@ -4,7 +4,7 @@
     "access": "public",
     "provenance": true
   },
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Viam's shared Prettier configuration for Svelte projects.",
   "type": "module",
   "types": "./dist/prettier-config-svelte.d.ts",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@viamrobotics/prettier-config": "workspace:^",
-    "prettier-plugin-svelte": "^3.3.2",
-    "prettier-plugin-tailwindcss": "^0.6.9"
+    "prettier-plugin-svelte": "~3.3.3",
+    "prettier-plugin-tailwindcss": "~0.6.11"
   }
 }
