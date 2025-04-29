@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "ESLint configuration for Svelte projects at Viam.",
   "type": "module",
   "main": "./eslint-config-svelte.js",
@@ -26,14 +26,14 @@
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "@typescript-eslint/utils": "~8.29.0",
+    "@typescript-eslint/utils": "~8.31.1",
     "@viamrobotics/eslint-config": "workspace:^",
     "eslint-plugin-jest-dom": "~5.5.0",
     "eslint-plugin-svelte": "~3.5.1",
     "eslint-plugin-tailwindcss": "~3.18.0",
     "eslint-plugin-testing-library": "~7.1.1",
     "globals": "^16.0.0",
-    "typescript-eslint": "~8.29.0"
+    "typescript-eslint": "~8.31.1"
   },
   "peerDependencies": {
     "eslint": ">=9 <10",

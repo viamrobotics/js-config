@@ -39,13 +39,11 @@ Install Node.js, pnpm, and development dependencies
 ```yaml
 - name: Setup Node.js
   uses: viamrobotics/js-config/.github/actions/setup
-  with:
-    node-version: '20'
 ```
 
 | Option                 | Description                          | Default |
 | ---------------------- | ------------------------------------ | ------- |
-| `node-version`         | Which Node.js version to install     | `20`    |
+| `node-version`         | Which Node.js version to install     | `22`    |
 | `registry-url`         | Configure a registry URL for publish | Unset   |
 | `install-dependencies` | Run `pnpm install`                   | `true`  |
 
@@ -71,7 +69,7 @@ Publish a package to npm and add a tag to the repository.
 
 ## Contributing
 
-Node.js v18 or higher is required to develop on this repository. To get started, clone the repository and install the project's development dependencies. .
+Node.js v22 or higher is required to develop on this repository. To get started, clone the repository and install the project's development dependencies.
 
 ```shell
 git clone https://github.com/viamrobotics/js-config.git
@@ -99,3 +97,13 @@ pnpm build
 ### Releasing
 
 Modules in this repository are continuously deployed to npm from the `main` branch. To trigger a release, create a commit that bumps `version` in one or more `package.json` files and create a pull request to merge that commit into `main`.
+
+### Updating dependencies
+
+> [!NOTE]
+> At the time of writing, we cannot update to Tailwind v4 due to lack of support in `eslint-plugin-tailwind`
+> See https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/384
+
+To update dependencies, use `pnpm update-dependencies`. This will launch `pnpm`'s interactive updater. In general, you can update all dependencies. Periodically, you should also run `corepack use pnpm@latest` to update the version of `pnpm` used in this repository. A monthly cycle works well to keep things up to date.
+
+After you update dependencies, bump the version of any affected `package.json` manifests to trigger new releases. For lint config packages especially: if a dependency releases a new major version (e.g. `eslint-plugin-unicorn`), we should probably also release a new major version, since new lint errors in downstream projects are likely.
