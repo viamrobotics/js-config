@@ -15,6 +15,7 @@ import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
 const baseSvelteConfig = createConfig(
   baseConfig,
   // @todo(mp): re-enable or replace with a tailwind v4 compatible plugin
+  // @see: https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/384
   // tailwind.configs['flat/recommended'],
   svelte.configs['flat/recommended'],
   svelte.configs['flat/prettier'],
