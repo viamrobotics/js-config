@@ -1,6 +1,5 @@
 import jestDOM from 'eslint-plugin-jest-dom';
 import svelte from 'eslint-plugin-svelte';
-import tailwind from 'eslint-plugin-tailwindcss';
 import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 import ts from 'typescript-eslint';
@@ -14,7 +13,6 @@ import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
 /** @type {ConfigArray} */
 const baseSvelteConfig = createConfig(
   baseConfig,
-  tailwind.configs['flat/recommended'],
   svelte.configs['flat/recommended'],
   svelte.configs['flat/prettier'],
 
@@ -39,10 +37,6 @@ const baseSvelteConfig = createConfig(
           '@typescript-eslint/no-unsafe-assignment',
           '@typescript-eslint/no-unsafe-member-access',
         ],
-      },
-      tailwindcss: {
-        callees: ['classnames', 'cx'],
-        classRegex: '^(?:class|cx)$',
       },
     },
     rules: {

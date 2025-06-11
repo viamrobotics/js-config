@@ -95,9 +95,6 @@ importers:
       eslint-plugin-svelte:
         specifier: ~3.5.1
         version: 3.5.1(eslint@9.24.0(jiti@1.21.6))(svelte@5.25.7)
-      eslint-plugin-tailwindcss:
-        specifier: ~3.18.0
-        version: 3.18.0(tailwindcss@3.4.16)
       eslint-plugin-testing-library:
         specifier: ~7.1.1
         version: 7.1.1(eslint@9.24.0(jiti@1.21.6))(typescript@5.8.3)
@@ -847,12 +844,6 @@ packages:
     peerDependenciesMeta:
       svelte:
         optional: true
-
-  eslint-plugin-tailwindcss@3.18.0:
-    resolution: {integrity: sha512-PQDU4ZMzFH0eb2DrfHPpbgo87Zgg2EXSMOj1NSfzdZm+aJzpuwGerfowMIaVehSREEa0idbf/eoNYAOHSJoDAQ==}
-    engines: {node: '>=18.12.0'}
-    peerDependencies:
-      tailwindcss: ^3.4.0
 
   eslint-plugin-testing-library@7.1.1:
     resolution: {integrity: sha512-nszC833aZPwB6tik1nMkbFqmtgIXTT0sfJEYs0zMBKMlkQ4to2079yUV96SvmLh00ovSBJI4pgcBC1TiIP8mXg==}
@@ -2410,12 +2401,6 @@ snapshots:
       svelte: 5.25.7
     transitivePeerDependencies:
       - ts-node
-
-  eslint-plugin-tailwindcss@3.18.0(tailwindcss@3.4.16):
-    dependencies:
-      fast-glob: 3.3.3
-      postcss: 8.5.3
-      tailwindcss: 3.4.16
 
   eslint-plugin-testing-library@7.1.1(eslint@9.24.0(jiti@1.21.6))(typescript@5.8.3):
     dependencies:
