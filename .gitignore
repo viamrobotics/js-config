@@ -2,3 +2,7 @@ node_modules
 dist
 *.tgz
 *.tsbuildinfo
+
+# Claude Code
+.claude/worktrees
+.claude/settings.local.json
