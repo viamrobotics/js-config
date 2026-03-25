@@ -1,0 +1,30 @@
+{
+  "name": "@viamrobotics/tailwind-config",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "version": "1.0.0",
+  "description": "Viam's shared Tailwind CSS v4 configuration.",
+  "exports": {
+    ".": "./tailwind-config.css",
+    "./fonts": "./fonts.js"
+  },
+  "files": [
+    "fonts.js",
+    "tailwind-config.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viamrobotics/js-config.git",
+    "directory": "packages/tailwind-config"
+  },
+  "keywords": [
+    "tailwind",
+    "tailwindcss"
+  ],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "tailwindcss": ">=4 <5"
+  }
+}
