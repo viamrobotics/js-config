@@ -119,6 +119,8 @@ importers:
         specifier: ~0.6.11
         version: 0.6.11(prettier-plugin-svelte@3.3.3(prettier@3.5.3)(svelte@5.25.7))(prettier@3.5.3)
 
+  packages/tailwind-config: {}
+
   packages/typescript-config: {}
 
 packages:
