@@ -11,5 +11,10 @@
     { "path": "./packages/prettier-config-svelte" },
     { "path": "./packages/tailwind-config" }
   ],
-  "include": ["eslint.config.js", "prettier.config.js", "fonts.js", "./tests/**/*.ts"]
+  "include": [
+    "eslint.config.js",
+    "prettier.config.js",
+    "fonts.js",
+    "./tests/**/*.ts"
+  ]
 }
