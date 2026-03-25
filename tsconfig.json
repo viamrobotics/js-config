@@ -8,8 +8,7 @@
     { "path": "./packages/eslint-config" },
     { "path": "./packages/eslint-config-svelte" },
     { "path": "./packages/prettier-config" },
-    { "path": "./packages/prettier-config-svelte" },
-    { "path": "./packages/tailwind-config" }
+    { "path": "./packages/prettier-config-svelte" }
   ],
   "include": [
     "eslint.config.js",
