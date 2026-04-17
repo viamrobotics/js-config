@@ -209,10 +209,40 @@
 
 @utility slider-track-cursor-* {
   &::-webkit-slider-runnable-track {
-    cursor: --value(string);
+    cursor: --value(
+      'auto',
+      'default',
+      'pointer',
+      'grab',
+      'grabbing',
+      'move',
+      'not-allowed',
+      'text',
+      'crosshair',
+      'wait',
+      'progress',
+      'help',
+      'none'
+    );
+    cursor: --value([ *]);
   }
   &::-moz-range-track {
-    cursor: --value(string);
+    cursor: --value(
+      'auto',
+      'default',
+      'pointer',
+      'grab',
+      'grabbing',
+      'move',
+      'not-allowed',
+      'text',
+      'crosshair',
+      'wait',
+      'progress',
+      'help',
+      'none'
+    );
+    cursor: --value([ *]);
   }
 }
 
@@ -261,10 +291,34 @@
 
 @utility slider-thumb-border-* {
   &::-webkit-slider-thumb {
-    border-style: --value(string);
+    border-style: --value(
+      'none',
+      'solid',
+      'dashed',
+      'dotted',
+      'double',
+      'groove',
+      'ridge',
+      'inset',
+      'outset',
+      'hidden'
+    );
+    border-style: --value([ *]);
   }
   &::-moz-range-thumb {
-    border-style: --value(string);
+    border-style: --value(
+      'none',
+      'solid',
+      'dashed',
+      'dotted',
+      'double',
+      'groove',
+      'ridge',
+      'inset',
+      'outset',
+      'hidden'
+    );
+    border-style: --value([ *]);
   }
 }
 
@@ -302,10 +356,40 @@
 
 @utility slider-thumb-cursor-* {
   &::-webkit-slider-thumb {
-    cursor: --value(string);
+    cursor: --value(
+      'auto',
+      'default',
+      'pointer',
+      'grab',
+      'grabbing',
+      'move',
+      'not-allowed',
+      'text',
+      'crosshair',
+      'wait',
+      'progress',
+      'help',
+      'none'
+    );
+    cursor: --value([ *]);
   }
   &::-moz-range-thumb {
-    cursor: --value(string);
+    cursor: --value(
+      'auto',
+      'default',
+      'pointer',
+      'grab',
+      'grabbing',
+      'move',
+      'not-allowed',
+      'text',
+      'crosshair',
+      'wait',
+      'progress',
+      'help',
+      'none'
+    );
+    cursor: --value([ *]);
   }
 }
 

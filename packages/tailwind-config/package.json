@@ -4,7 +4,7 @@
     "access": "public",
     "provenance": true
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Viam's shared Tailwind CSS v4 configuration.",
   "exports": {
     ".": "./tailwind-config.css",
