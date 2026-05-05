@@ -1,14 +1,14 @@
 {
-	"permissions": {
-		"deny": [
-			"Edit(file_path=.github/**)",
-			"Write(file_path=.github/**)",
-			"Edit(file_path=pnpm-lock.yaml)",
-			"Write(file_path=pnpm-lock.yaml)",
-			"Edit(file_path=packages/*/dist/**)",
-			"Write(file_path=packages/*/dist/**)",
-			"Edit(file_path=node_modules/**)",
-			"Write(file_path=node_modules/**)"
-		]
-	}
+  "permissions": {
+    "deny": [
+      "Edit(file_path=.github/**)",
+      "Write(file_path=.github/**)",
+      "Edit(file_path=pnpm-lock.yaml)",
+      "Write(file_path=pnpm-lock.yaml)",
+      "Edit(file_path=packages/*/dist/**)",
+      "Write(file_path=packages/*/dist/**)",
+      "Edit(file_path=node_modules/**)",
+      "Write(file_path=node_modules/**)"
+    ]
+  }
 }
