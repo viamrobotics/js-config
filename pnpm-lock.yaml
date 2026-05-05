@@ -84,8 +84,8 @@ importers:
   packages/eslint-config-svelte:
     dependencies:
       '@typescript-eslint/utils':
-        specifier: ~8.29.0
-        version: 8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
+        specifier: ~8.59.2
+        version: 8.59.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
       '@viamrobotics/eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
@@ -93,17 +93,17 @@ importers:
         specifier: ~5.5.0
         version: 5.5.0(eslint@10.3.0(jiti@1.21.6))
       eslint-plugin-svelte:
-        specifier: ~3.5.1
-        version: 3.5.1(eslint@10.3.0(jiti@1.21.6))(svelte@5.25.7)
+        specifier: ~3.17.1
+        version: 3.17.1(eslint@10.3.0(jiti@1.21.6))(svelte@5.25.7)
       eslint-plugin-testing-library:
-        specifier: ~7.1.1
-        version: 7.1.1(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
+        specifier: ~7.16.2
+        version: 7.16.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
       globals:
-        specifier: ^16.0.0
-        version: 16.0.0
+        specifier: ^17.6.0
+        version: 17.6.0
       typescript-eslint:
-        specifier: ~8.29.0
-        version: 8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
+        specifier: ~8.59.2
+        version: 8.59.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
 
   packages/prettier-config: {}
 
@@ -923,21 +923,21 @@ packages:
     peerDependencies:
       eslint: ^8.45.0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-svelte@3.5.1:
-    resolution: {integrity: sha512-Qn1slddZHfqYiDO6IN8/iN3YL+VuHlgYjm30FT+hh0Jf/TX0jeZMTJXQMajFm5f6f6hURi+XO8P+NPYD+T4jkg==}
+  eslint-plugin-svelte@3.17.1:
+    resolution: {integrity: sha512-NyiXHtS3Ni7e532RBwS9OXlMKDIrENg3gY+/+ODjZzQx2xhU3NlJ+nIl1a93iUUQeiJL3lS8KLmY+W8hklzweQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.1 || ^9.0.0
+      eslint: ^8.57.1 || ^9.0.0 || ^10.0.0
       svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
       svelte:
         optional: true
 
-  eslint-plugin-testing-library@7.1.1:
-    resolution: {integrity: sha512-nszC833aZPwB6tik1nMkbFqmtgIXTT0sfJEYs0zMBKMlkQ4to2079yUV96SvmLh00ovSBJI4pgcBC1TiIP8mXg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: ^9.14.0}
+  eslint-plugin-testing-library@7.16.2:
+    resolution: {integrity: sha512-8gleGnQXK2ZA3hHwjCwpYTZvM+9VsrJ+/9kDI8CjqAQGAdMQOdn/rJNu7ZySENuiWlGKQWyZJ4ZjEg2zamaRHw==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
+      eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
 
   eslint-plugin-unicorn@64.0.0:
     resolution: {integrity: sha512-rNZwalHh8i0UfPlhNwg5BTUO1CMdKNmjqe+TgzOTZnpKoi8VBgsW7u9qCHIdpxEzZ1uwrJrPF0uRb7l//K38gA==}
@@ -1181,8 +1181,8 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
-  known-css-properties@0.35.0:
-    resolution: {integrity: sha512-a/RAk2BfKk+WFGhhOCAYqSiFLc34k8Mt/6NWRI4joER0EYUzXIcFivjjnoD3+XU1DggLn/tZc3DOAgke7l8a4A==}
+  known-css-properties@0.37.0:
+    resolution: {integrity: sha512-JCDrsP4Z1Sb9JwG0aJ8Eo2r7k4Ou5MwmThS/6lcIe1ICyb7UBJKGRIUUdqc2ASdE/42lgz6zFUnzAIhtXnBVrQ==}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -1597,9 +1597,9 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  svelte-eslint-parser@1.1.2:
-    resolution: {integrity: sha512-vqFBRamDKo1l70KMfxxXj1/0Cco5TfMDnqaAjgz6D8PyoMhfMcDOLRkAwPg8WkMyZjMtQL3wW66TZ0x59iqO2w==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+  svelte-eslint-parser@1.6.1:
+    resolution: {integrity: sha512-hhvSH6kRj46UzrBVO5TaotD+Iuvruj5ccKBcO4wAhVcPTLmIc/c32D8UllBTYO0on4LzYuM0rNzf1lM/gBlkSQ==}
+    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: 10.33.0}
     peerDependencies:
       svelte: ^3.37.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
@@ -1673,13 +1673,6 @@ packages:
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
-
-  typescript-eslint@8.29.0:
-    resolution: {integrity: sha512-ep9rVd9B4kQsZ7ZnWCVxUE/xDLUUUsRzE0poAeNu+4CkFErLfuvPt/qtm2EpnSyfvsR0S6QzDFSrPCFBwf64fg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
-    peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
-      typescript: '>=4.8.4 <5.9.0'
 
   typescript-eslint@8.59.2:
     resolution: {integrity: sha512-pJw051uomb3ZeCzGTpRb8RbEqB5Y4WWet8gl/GcTlU35BSx0PVdZ86/bqkQCyKKuraVQEK7r6kBHQXF+fBhkoQ==}
@@ -2314,10 +2307,6 @@ snapshots:
       loupe: 3.1.3
       tinyrainbow: 2.0.0
 
-  acorn-jsx@5.3.2(acorn@8.14.1):
-    dependencies:
-      acorn: 8.14.1
-
   acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
       acorn: 8.16.0
@@ -2546,27 +2535,28 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-svelte@3.5.1(eslint@10.3.0(jiti@1.21.6))(svelte@5.25.7):
+  eslint-plugin-svelte@3.17.1(eslint@10.3.0(jiti@1.21.6))(svelte@5.25.7):
     dependencies:
-      '@eslint-community/eslint-utils': 4.5.1(eslint@10.3.0(jiti@1.21.6))
+      '@eslint-community/eslint-utils': 4.9.1(eslint@10.3.0(jiti@1.21.6))
       '@jridgewell/sourcemap-codec': 1.5.0
       eslint: 10.3.0(jiti@1.21.6)
       esutils: 2.0.3
-      known-css-properties: 0.35.0
+      globals: 16.0.0
+      known-css-properties: 0.37.0
       postcss: 8.5.3
       postcss-load-config: 3.1.4(postcss@8.5.3)
       postcss-safe-parser: 7.0.1(postcss@8.5.3)
-      semver: 7.7.1
-      svelte-eslint-parser: 1.1.2(svelte@5.25.7)
+      semver: 7.7.4
+      svelte-eslint-parser: 1.6.1(svelte@5.25.7)
     optionalDependencies:
       svelte: 5.25.7
     transitivePeerDependencies:
       - ts-node
 
-  eslint-plugin-testing-library@7.1.1(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3):
+  eslint-plugin-testing-library@7.16.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3):
     dependencies:
-      '@typescript-eslint/scope-manager': 8.29.0
-      '@typescript-eslint/utils': 8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
+      '@typescript-eslint/scope-manager': 8.59.2
+      '@typescript-eslint/utils': 8.59.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
       eslint: 10.3.0(jiti@1.21.6)
     transitivePeerDependencies:
       - supports-color
@@ -2651,8 +2641,8 @@ snapshots:
 
   espree@10.3.0:
     dependencies:
-      acorn: 8.14.1
-      acorn-jsx: 5.3.2(acorn@8.14.1)
+      acorn: 8.16.0
+      acorn-jsx: 5.3.2(acorn@8.16.0)
       eslint-visitor-keys: 4.2.0
 
   espree@11.2.0:
@@ -2824,7 +2814,7 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
-  known-css-properties@0.35.0: {}
+  known-css-properties@0.37.0: {}
 
   levn@0.4.1:
     dependencies:
@@ -3140,7 +3130,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-eslint-parser@1.1.2(svelte@5.25.7):
+  svelte-eslint-parser@1.6.1(svelte@5.25.7):
     dependencies:
       eslint-scope: 8.3.0
       eslint-visitor-keys: 4.2.0
@@ -3148,6 +3138,7 @@ snapshots:
       postcss: 8.5.3
       postcss-scss: 4.0.9(postcss@8.5.3)
       postcss-selector-parser: 7.1.0
+      semver: 7.7.4
     optionalDependencies:
       svelte: 5.25.7
 
@@ -3239,16 +3230,6 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
-
-  typescript-eslint@8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3):
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 8.29.0(@typescript-eslint/parser@8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3))(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
-      '@typescript-eslint/parser': 8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
-      '@typescript-eslint/utils': 8.29.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
-      eslint: 10.3.0(jiti@1.21.6)
-      typescript: 5.8.3
-    transitivePeerDependencies:
-      - supports-color
 
   typescript-eslint@8.59.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3):
     dependencies:
