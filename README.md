@@ -45,7 +45,7 @@ Install Node.js, pnpm, and development dependencies
 
 | Option                 | Description                          | Default |
 | ---------------------- | ------------------------------------ | ------- |
-| `node-version`         | Which Node.js version to install     | `20`    |
+| `node-version`         | Which Node.js version to install     | `22`    |
 | `registry-url`         | Configure a registry URL for publish | Unset   |
 | `install-dependencies` | Run `pnpm install`                   | `true`  |
 

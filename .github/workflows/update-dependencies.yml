@@ -1,0 +1,96 @@
+name: Update Dependencies
+
+on:
+  schedule:
+    - cron: '0 10 * * 1' # Every Monday at 10:00 UTC (offset from claude-dependabot-sweep at 09:00)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    if: github.repository_owner == 'viamrobotics'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Generate GitHub App token
+        id: app-token
+        # actions/create-github-app-token@v2.2.1
+        uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf
+        with:
+          app-id: ${{ secrets.CI_GITHUB_APP_ID }}
+          private-key: ${{ secrets.CI_GITHUB_APP_PRIVATE_KEY }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Setup Node + pnpm
+        uses: ./.github/actions/setup
+
+      - name: Record pre-update state per package
+        id: before
+        run: |
+          {
+            echo 'outdated<<__OUTDATED_EOF__'
+            for pkg_dir in packages/*/; do
+              pkg_name=$(node -p "require('./${pkg_dir}package.json').name")
+              out=$(pnpm --filter "$pkg_name" outdated 2>&1 || true)
+              if [ -n "$out" ]; then
+                echo ""
+                echo "#### \`${pkg_name}\`"
+                echo ""
+                echo '```'
+                echo "$out"
+                echo '```'
+              fi
+            done
+            echo '__OUTDATED_EOF__'
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Update each package to latest
+        run: |
+          for pkg_dir in packages/*/; do
+            pkg_name=$(node -p "require('./${pkg_dir}package.json').name")
+            echo "::group::Updating $pkg_name"
+            pnpm --filter "$pkg_name" update --latest
+            echo "::endgroup::"
+          done
+          pnpm install
+
+      - name: Run checks (soft-fail so PR opens even if something breaks)
+        id: verify
+        continue-on-error: true
+        run: pnpm run all
+
+      - name: Create Pull Request
+        # peter-evans/create-pull-request@v7.0.8
+        uses: peter-evans/create-pull-request@67ccf781d68cd99b580ae25a5c18a1cc84ffff1f
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: chore/weekly-dependency-updates
+          delete-branch: true
+          commit-message: 'chore(deps): weekly dependency updates across all packages'
+          title: 'chore(deps): weekly dependency updates'
+          labels: |
+            dependencies
+            automated
+          body: |
+            Automated weekly `pnpm update --latest` run separately against every package in the workspace.
+
+            ### Pre-update outdated dependencies (per package)
+            ${{ steps.before.outputs.outdated }}
+
+            ### CI verification (`pnpm run all`)
+
+            - Outcome: `${{ steps.verify.outcome }}`
+            - If `failure`, review the lint/test/build logs in this run and fix before merging. See [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+
+            ### Reviewer checklist
+            - [ ] `peerDependencies` ranges in each `packages/*/package.json` are still compatible with the bumped versions.
+            - [ ] No package `version` field was bumped (that should be a separate, intentional release PR).
+            - [ ] `Pull Request Checks` is green.

@@ -1,0 +1,73 @@
+name: Claude Dependabot Sweep
+
+on:
+  schedule:
+    - cron: '0 9 * * 1' # Every Monday at 9:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  call-dependabot-sweep:
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+      id-token: write
+    if: github.repository_owner == 'viamrobotics'
+    # viamrobotics/claude-ci-workflows@v1.19.0
+    uses: viamrobotics/claude-ci-workflows/.github/workflows/claude-dependabot-sweep.yml@c76a2e328535a1e478d99481a1b409664f660a0a
+    with:
+      install_command: |
+        NODE22_BIN=$(ls -d /opt/hostedtoolcache/node/22.*/x64/bin | tail -1)
+        echo "$NODE22_BIN" >> "$GITHUB_PATH"
+        export PATH="$NODE22_BIN:$PATH"
+        corepack enable
+        pnpm install
+      allowed_tools: 'Edit,Read,Write,Glob,Grep,Bash(pnpm install*),Bash(pnpm add*),Bash(pnpm update*),Bash(pnpm outdated*),Bash(pnpm ls*),Bash(pnpm why*),Bash(pnpm *),Bash(npx *),Bash(node *),Bash(ls *),Bash(find *),Bash(git config *),Bash(git add *),Bash(git commit *),Bash(git push *),Bash(git status*),Bash(git diff*),Bash(git log*),Bash(git checkout *),Bash(git branch *),Bash(git rev-parse *),Bash(git fetch *),Bash(gh pr create*),Bash(gh pr view*),Bash(gh issue comment*),Bash(gh issue view*)'
+      extra_system_prompt: |
+        ### Updating JavaScript/TypeScript dependencies (pnpm workspace)
+        - This is a pnpm WORKSPACE with 6 packages in `packages/`.
+          Each package has its own `package.json` with its own `dependencies` and
+          `peerDependencies`.
+        - To update a direct dependency in a specific package:
+          `pnpm --filter @viamrobotics/<package-name> update <dep>@<version>`.
+        - To update across all packages at once:
+          `pnpm update --recursive <dep>@<version>`.
+        - To check where a dependency is installed: `pnpm -r ls <dep>` or
+          `pnpm why <dep>`.
+        - `pnpm install` at the repo root regenerates the single root
+          `pnpm-lock.yaml`.
+        - `peerDependencies` ranges are public API for consumers. Never tighten
+          a lower bound unless a security fix requires it, and never raise a
+          major-version upper bound without a major release of this package.
+
+        ### Packages in this workspace
+        - `@viamrobotics/eslint-config` — peer: eslint >=9, typescript >=5, vitest
+        - `@viamrobotics/eslint-config-svelte` — peer: eslint >=9, svelte, tailwindcss >=3 <4, typescript >=5, vitest
+        - `@viamrobotics/prettier-config` — peer: prettier >=3 <4
+        - `@viamrobotics/prettier-config-svelte` — peer: prettier >=3 <4, svelte, tailwindcss
+        - `@viamrobotics/tailwind-config` — peer: tailwindcss >=4 <5
+        - `@viamrobotics/typescript-config` — peer: typescript >=5 <6
+
+        ### Build & verify
+        - Verify with commands relevant to what changed:
+          - TypeScript/JS files: `pnpm lint` and `pnpm test`
+          - Build regressions: `pnpm build`
+        - Do NOT modify `packages/*/dist/**` (generated) or `.github/**` (workflows).
+
+        ### Release model
+        - This repo does NOT use changesets. Releases happen when someone bumps
+          `version` in a `packages/*/package.json` and merges to `main`.
+          Dependency updates should NOT touch `version` fields.
+
+        ### Framework constraints
+        - `eslint-config-svelte` and `prettier-config-svelte` target Svelte 5;
+          consult the Svelte MCP server when editing them.
+        - Package manager: pnpm. Node: 22.
+    secrets:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      CI_GITHUB_APP_ID: ${{ secrets.CI_GITHUB_APP_ID }}
+      CI_GITHUB_APP_PRIVATE_KEY: ${{ secrets.CI_GITHUB_APP_PRIVATE_KEY }}
+      SLACK_AI_WORKFLOW_ALERT_WEBHOOK_URL: ${{ secrets.SLACK_AI_WORKFLOW_ALERT_WEBHOOK_URL }}

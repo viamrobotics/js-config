@@ -1,9 +1,6 @@
-name: Continuous integration
+name: Main
 
 on:
-  pull_request:
-    branches:
-      - main
   push:
     branches:
       - main
@@ -21,7 +18,6 @@ jobs:
         run: pnpm run all
 
   publish:
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
     needs: [check]
     runs-on: ubuntu-latest
     permissions:
@@ -41,3 +37,5 @@ jobs:
 
       - name: 'Publish 🚀'
         run: pnpm publish --recursive
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
