@@ -32,10 +32,11 @@ jobs:
         with:
           registry-url: https://registry.npmjs.org/
 
+      - name: 'Update npm 📦'
+        run: npm install -g npm@latest
+
       - name: 'Build 🏗️'
         run: pnpm run build
 
       - name: 'Publish 🚀'
         run: pnpm publish --recursive
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
