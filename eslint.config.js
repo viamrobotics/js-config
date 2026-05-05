@@ -1,6 +1,6 @@
-import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
+import { baseConfig, defineConfig } from '@viamrobotics/eslint-config';
 
-export default createConfig(
+export default defineConfig(
   baseConfig,
   {
     languageOptions: {
