@@ -1,4 +1,3 @@
-import jestDOM from 'eslint-plugin-jest-dom';
 import svelte from 'eslint-plugin-svelte';
 import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
@@ -67,10 +66,7 @@ const baseSvelteConfig = defineConfig(
 
   {
     name: 'viam/svelte/component-testing',
-    extends: [
-      jestDOM.configs['flat/recommended'],
-      testingLibrary.configs['flat/dom'],
-    ],
+    extends: [testingLibrary.configs['flat/dom']],
     files: ['**/__tests__/**', '**/*.test.ts', '**/*.spec.ts'],
     rules: {
       ...testingLibrary.configs['flat/dom'].rules,

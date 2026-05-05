@@ -89,9 +89,6 @@ importers:
       '@viamrobotics/eslint-config':
         specifier: workspace:^
         version: link:../eslint-config
-      eslint-plugin-jest-dom:
-        specifier: ~5.5.0
-        version: 5.5.0(eslint@10.3.0(jiti@1.21.6))
       eslint-plugin-svelte:
         specifier: ~3.17.1
         version: 3.17.1(eslint@10.3.0(jiti@1.21.6))(svelte@5.25.7)
@@ -135,10 +132,6 @@ packages:
 
   '@babel/helper-validator-identifier@7.28.5':
     resolution: {integrity: sha512-qSs4ifwzKJSV39ucNjsvc6WVHs6b7S03sOh2OcHF9UHfVPqWWALUsNUVzhSBiItjRZoLHx7nIarVjqKVusUZ1Q==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/runtime@7.24.5':
-    resolution: {integrity: sha512-Nms86NXrsaeU9vbBJKni6gXiEXZ4CVpYVzEjDH9Sb8vmZ3UljyA1GSOJl/6LGPO8EHLuSF9H+IxNXHPX8QHJ4g==}
     engines: {node: '>=6.9.0'}
 
   '@esbuild/aix-ppc64@0.25.2':
@@ -907,16 +900,6 @@ packages:
     peerDependencies:
       eslint: '>=7.0.0'
 
-  eslint-plugin-jest-dom@5.5.0:
-    resolution: {integrity: sha512-CRlXfchTr7EgC3tDI7MGHY6QjdJU5Vv2RPaeeGtkXUHnKZf04kgzMPIJUXt4qKCvYWVVIEo9ut9Oq1vgXAykEA==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0, npm: '>=6', yarn: '>=1'}
-    peerDependencies:
-      '@testing-library/dom': ^8.0.0 || ^9.0.0 || ^10.0.0
-      eslint: ^6.8.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
-    peerDependenciesMeta:
-      '@testing-library/dom':
-        optional: true
-
   eslint-plugin-perfectionist@5.9.0:
     resolution: {integrity: sha512-8TWzg02zmnBdZwCkWLi8jhzqXI+fE7Z/RwV8SL6xD45tJ8Bp3wGuYL2XtQgfe/Wd0eBqOUX+s6ey73IyszvKTA==}
     engines: {node: ^20.0.0 || >=22.0.0}
@@ -1484,9 +1467,6 @@ packages:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
 
-  regenerator-runtime@0.14.1:
-    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
-
   regexp-tree@0.1.27:
     resolution: {integrity: sha512-iETxpjK6YoRWJG5o6hXLwvjYAoW+FEZn9os0PD/b6AP6xQwsa/Y7lCVgIixBbUPMfhu+i2LtdeAqVTgGlQarfA==}
     hasBin: true
@@ -1498,10 +1478,6 @@ packages:
   require-directory@2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
-
-  requireindex@1.2.0:
-    resolution: {integrity: sha512-L9jEkOi3ASd9PYit2cwRfyppc9NoABujTP8/5gFcbERmo5jUoAKovIC3fsF17pkTnGsrByysqX+Kxd2OTNI1ww==}
-    engines: {node: '>=0.10.5'}
 
   resolve@1.22.8:
     resolution: {integrity: sha512-oKWePCxqpd6FlLvGV1VU0x7bkPmmCNolxzjMf4NczoDnQcIWrAF+cPtZn5i6n+RfD2d9i0tzpKnG6Yk168yIyw==}
@@ -1834,10 +1810,6 @@ snapshots:
       '@jridgewell/trace-mapping': 0.3.25
 
   '@babel/helper-validator-identifier@7.28.5': {}
-
-  '@babel/runtime@7.24.5':
-    dependencies:
-      regenerator-runtime: 0.14.1
 
   '@esbuild/aix-ppc64@0.25.2':
     optional: true
@@ -2520,12 +2492,6 @@ snapshots:
     dependencies:
       eslint: 10.3.0(jiti@1.21.6)
 
-  eslint-plugin-jest-dom@5.5.0(eslint@10.3.0(jiti@1.21.6)):
-    dependencies:
-      '@babel/runtime': 7.24.5
-      eslint: 10.3.0(jiti@1.21.6)
-      requireindex: 1.2.0
-
   eslint-plugin-perfectionist@5.9.0(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3):
     dependencies:
       '@typescript-eslint/utils': 8.59.2(eslint@10.3.0(jiti@1.21.6))(typescript@5.8.3)
@@ -3012,8 +2978,6 @@ snapshots:
     dependencies:
       picomatch: 2.3.1
 
-  regenerator-runtime@0.14.1: {}
-
   regexp-tree@0.1.27: {}
 
   regjsparser@0.13.1:
@@ -3021,8 +2985,6 @@ snapshots:
       jsesc: 3.1.0
 
   require-directory@2.1.1: {}
-
-  requireindex@1.2.0: {}
 
   resolve@1.22.8:
     dependencies:
