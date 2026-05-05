@@ -1,23 +1,17 @@
 import js from '@eslint/js';
 import vitest from '@vitest/eslint-plugin';
 import prettier from 'eslint-config-prettier';
-import simpleImportSort from 'eslint-plugin-simple-import-sort';
+import perfectionist from 'eslint-plugin-perfectionist';
 import unicorn from 'eslint-plugin-unicorn';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 
-const createConfig = ts.config;
-
-/**
- * @typedef {import('@typescript-eslint/utils').TSESLint.FlatConfig.ConfigArray} ConfigArray
- */
-
-/** @type {ConfigArray} */
-const baseConfig = createConfig(
+const baseConfig = defineConfig(
   js.configs.recommended,
   ts.configs.strictTypeChecked,
   ts.configs.stylisticTypeChecked,
-  unicorn.configs['flat/recommended'],
+  unicorn.configs.recommended,
 
   {
     name: 'viam/base',
@@ -201,33 +195,38 @@ const baseConfig = createConfig(
     },
   },
 
-  // Import sorting
+  // Import sorting via perfectionist (sort-imports rule only)
   {
     name: 'viam/import-sort',
     plugins: {
-      'simple-import-sort': simpleImportSort,
+      perfectionist,
     },
     rules: {
-      'simple-import-sort/imports': [
+      'perfectionist/sort-imports': [
         'error',
         {
-          groups: [
-            // Side effect imports
-            [String.raw`^\u0000`],
-            // Node.js builtins
-            ['^node:'],
-            // Third-party packages
-            ['^vitest', '^svelte', '^@sveltejs', String.raw`^@?\w`],
-            // First-party packages
-            ['^@viamrobotics'],
-            // Anything not matched in another group, like internal $alias imports
-            ['^'],
-            // Relative imports
-            [String.raw`^\.`],
+          customGroups: [
+            {
+              elementNamePattern: '^@viamrobotics',
+              groupName: 'viamrobotics',
+            },
           ],
+          groups: [
+            'side-effect',
+            'builtin',
+            'external',
+            'viamrobotics',
+            'internal',
+            'parent',
+            'sibling',
+            'index',
+            'type',
+          ],
+          newlinesBetween: 1,
+          order: 'asc',
+          type: 'natural',
         },
       ],
-      'simple-import-sort/exports': 'error',
     },
   },
 
@@ -304,4 +303,5 @@ const baseConfig = createConfig(
   prettier
 );
 
-export { baseConfig, createConfig };
+export { defineConfig } from 'eslint/config';
+export { baseConfig };

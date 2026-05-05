@@ -4,14 +4,9 @@ import testingLibrary from 'eslint-plugin-testing-library';
 import globals from 'globals';
 import ts from 'typescript-eslint';
 
-import { baseConfig, createConfig } from '@viamrobotics/eslint-config';
+import { baseConfig, defineConfig } from '@viamrobotics/eslint-config';
 
-/**
- * @typedef {import('@viamrobotics/eslint-config').ConfigArray} ConfigArray
- */
-
-/** @type {ConfigArray} */
-const baseSvelteConfig = createConfig(
+const baseSvelteConfig = defineConfig(
   baseConfig,
   svelte.configs['flat/recommended'],
   svelte.configs['flat/prettier'],
@@ -98,4 +93,4 @@ const baseSvelteConfig = createConfig(
 );
 
 export { baseSvelteConfig };
-export { createConfig } from '@viamrobotics/eslint-config';
+export { defineConfig } from '@viamrobotics/eslint-config';
