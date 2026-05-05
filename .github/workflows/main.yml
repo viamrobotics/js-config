@@ -30,12 +30,10 @@ jobs:
       - name: 'Install 🔧'
         uses: ./.github/actions/setup
         with:
-          registry-url: https://registry.npmjs.org/
+          node-version: '24'
 
       - name: 'Build 🏗️'
         run: pnpm run build
 
       - name: 'Publish 🚀'
-        run: pnpm publish --recursive
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm publish --recursive --no-git-checks
