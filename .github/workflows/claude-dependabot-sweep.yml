@@ -16,8 +16,8 @@ jobs:
       issues: write
       id-token: write
     if: github.repository_owner == 'viamrobotics'
-    # viamrobotics/claude-ci-workflows@v1.19.0
-    uses: viamrobotics/claude-ci-workflows/.github/workflows/claude-dependabot-sweep.yml@c76a2e328535a1e478d99481a1b409664f660a0a
+    # viamrobotics/claude-ci-workflows@v2.0.0
+    uses: viamrobotics/claude-ci-workflows/.github/workflows/claude-dependabot-sweep.yml@aa76787c145ed43f8f7b9bae4d978da4f9850001
     with:
       install_command: |
         NODE22_BIN=$(ls -d /opt/hostedtoolcache/node/22.*/x64/bin | tail -1)
