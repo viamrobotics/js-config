@@ -139,42 +139,42 @@
 }
 
 @utility scrollbar-* {
-  scrollbar-color: --value(--color- *);
+  scrollbar-color: --value(--color-*);
 }
 
 @utility scrollbar-w-* {
   &::-webkit-scrollbar {
-    width: --value(--spacing- *);
+    width: --value(--spacing-*);
   }
 }
 
 @utility scrollbar-track-* {
   &::-webkit-scrollbar-track {
-    background: --value(--color- *);
+    background: --value(--color-*);
   }
 }
 
 @utility scrollbar-thumb-* {
   &::-webkit-scrollbar-thumb {
-    background-color: --value(--color- *);
+    background-color: --value(--color-*);
   }
 }
 
 @utility scrollbar-thumb-border-* {
   &::-webkit-scrollbar-thumb {
-    border-radius: --value(--radius- *);
+    border-radius: --value(--radius-*);
   }
 }
 
 @utility scrollbar-thumb-border-* {
   &::-webkit-scrollbar-thumb {
-    border-width: --value(--border-width- *);
+    border-width: --value(--border-width-*);
   }
 }
 
 @utility scrollbar-thumb-border-* {
   &::-webkit-scrollbar-thumb {
-    border-color: --value(--color- *);
+    border-color: --value(--color-*);
   }
 }
 
@@ -182,28 +182,28 @@
 
 @utility slider-track-* {
   &::-webkit-slider-runnable-track {
-    background: --value(--color- *);
+    background: --value(--color-*);
   }
   &::-moz-range-track {
-    background: --value(--color- *);
+    background: --value(--color-*);
   }
 }
 
 @utility slider-track-w-* {
   &::-webkit-slider-runnable-track {
-    width: --value(--spacing- *);
+    width: --value(--spacing-*);
   }
   &::-moz-range-track {
-    width: --value(--spacing- *);
+    width: --value(--spacing-*);
   }
 }
 
 @utility slider-track-h-* {
   &::-webkit-slider-runnable-track {
-    height: --value(--spacing- *);
+    height: --value(--spacing-*);
   }
   &::-moz-range-track {
-    height: --value(--spacing- *);
+    height: --value(--spacing-*);
   }
 }
 
@@ -224,7 +224,7 @@
       'help',
       'none'
     );
-    cursor: --value([ *]);
+    cursor: --value([*]);
   }
   &::-moz-range-track {
     cursor: --value(
@@ -242,7 +242,7 @@
       'help',
       'none'
     );
-    cursor: --value([ *]);
+    cursor: --value([*]);
   }
 }
 
@@ -250,29 +250,29 @@
 
 @utility slider-thumb-* {
   &::-webkit-slider-thumb {
-    background: --value(--color- *);
+    background: --value(--color-*);
   }
   &::-moz-range-thumb {
-    background: --value(--color- *);
+    background: --value(--color-*);
   }
 }
 
 @utility slider-thumb-w-* {
   &::-webkit-slider-thumb {
-    width: --value(--spacing- *);
+    width: --value(--spacing-*);
   }
   &::-moz-range-thumb {
-    width: --value(--spacing- *);
+    width: --value(--spacing-*);
   }
 }
 
 @utility slider-thumb-h-* {
   &::-webkit-slider-thumb {
-    height: --value(--spacing- *);
-    margin-top: calc(--value(--spacing- *) / -2);
+    height: --value(--spacing-*);
+    margin-top: calc(--value(--spacing-*) / -2);
   }
   &::-moz-range-thumb {
-    height: --value(--spacing- *);
+    height: --value(--spacing-*);
   }
 }
 
@@ -282,10 +282,10 @@
  */
 @utility slider-thumb-border-* {
   &::-webkit-slider-thumb {
-    border-width: --value(--border-width- *);
+    border-width: --value(--border-width-*);
   }
   &::-moz-range-thumb {
-    border-width: --value(--border-width- *);
+    border-width: --value(--border-width-*);
   }
 }
 
@@ -303,7 +303,7 @@
       'outset',
       'hidden'
     );
-    border-style: --value([ *]);
+    border-style: --value([*]);
   }
   &::-moz-range-thumb {
     border-style: --value(
@@ -318,25 +318,25 @@
       'outset',
       'hidden'
     );
-    border-style: --value([ *]);
+    border-style: --value([*]);
   }
 }
 
 @utility slider-thumb-border-* {
   &::-webkit-slider-thumb {
-    border-color: --value(--color- *);
+    border-color: --value(--color-*);
   }
   &::-moz-range-thumb {
-    border-color: --value(--color- *);
+    border-color: --value(--color-*);
   }
 }
 
 @utility slider-thumb-border-* {
   &::-webkit-slider-thumb {
-    border-radius: --value(--radius- *);
+    border-radius: --value(--radius-*);
   }
   &::-moz-range-thumb {
-    border-radius: --value(--radius- *);
+    border-radius: --value(--radius-*);
   }
 }
 
@@ -371,7 +371,7 @@
       'help',
       'none'
     );
-    cursor: --value([ *]);
+    cursor: --value([*]);
   }
   &::-moz-range-thumb {
     cursor: --value(
@@ -389,7 +389,7 @@
       'help',
       'none'
     );
-    cursor: --value([ *]);
+    cursor: --value([*]);
   }
 }
 
