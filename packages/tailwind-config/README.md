@@ -1,5 +1,8 @@
 # Viam's Tailwind Config
 
+> [!IMPORTANT]
+> **This package has moved.** Future development of `@viamrobotics/tailwind-config` happens at **https://github.com/viamrobotics/tailwind-config**. The copy in this archived repository is no longer maintained — please use the standalone repository for new versions.
+
 This module contains [Viam][]'s shared [Tailwind CSS][] v4 configuration.
 
 [viam]: https://www.viam.com/

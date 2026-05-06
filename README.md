@@ -1,5 +1,11 @@
 # Viam Shared JS/TS Config
 
+> [!WARNING]
+> **This repository is archived and no longer maintained.**
+>
+> - `@viamrobotics/tailwind-config` has moved to a standalone repository: **https://github.com/viamrobotics/tailwind-config**. Please install future versions from there.
+> - All other packages in this repository (`@viamrobotics/eslint-config`, `@viamrobotics/eslint-config-svelte`, `@viamrobotics/prettier-config`, `@viamrobotics/prettier-config-svelte`, `@viamrobotics/typescript-config`) are **deprecated** and will receive no further updates. Consumers should set up their own ESLint, Prettier, and TypeScript configurations in their own repositories going forward.
+
 Shared configuration for JavaScript and TypeScript tools.
 
 ## Libraries

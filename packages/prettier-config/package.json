@@ -6,6 +6,7 @@
   },
   "version": "1.0.1",
   "description": "Viam's shared Prettier configuration.",
+  "deprecated": "This package is no longer maintained. The viamrobotics/js-config repository has been archived. Please set up your own Prettier configuration in your own repository going forward.",
   "type": "module",
   "types": "./dist/prettier-config.d.ts",
   "exports": {

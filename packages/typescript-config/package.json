@@ -6,6 +6,7 @@
   },
   "version": "0.1.1",
   "description": "Common TypeScript configuration for Viam projects.",
+  "deprecated": "This package is no longer maintained. The viamrobotics/js-config repository has been archived. Please set up your own TypeScript configuration in your own repository going forward.",
   "files": [
     "**/*",
     "!tsconfig.json"
