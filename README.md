@@ -3,8 +3,15 @@
 > [!WARNING]
 > **This repository is archived and no longer maintained.**
 >
-> - `@viamrobotics/tailwind-config` has moved to a standalone repository: **https://github.com/viamrobotics/tailwind-config**. Please install future versions from there.
-> - All other packages in this repository (`@viamrobotics/eslint-config`, `@viamrobotics/eslint-config-svelte`, `@viamrobotics/prettier-config`, `@viamrobotics/prettier-config-svelte`, `@viamrobotics/typescript-config`) are **deprecated** and will receive no further updates. Consumers should set up their own ESLint, Prettier, and TypeScript configurations in their own repositories going forward.
+> The following packages are **deprecated** and will receive no further updates. Consumers should set up their own ESLint, Prettier, and TypeScript configurations in their own repositories going forward:
+>
+> - `@viamrobotics/eslint-config`
+> - `@viamrobotics/eslint-config-svelte`
+> - `@viamrobotics/prettier-config`
+> - `@viamrobotics/prettier-config-svelte`
+> - `@viamrobotics/typescript-config`
+>
+> `@viamrobotics/tailwind-config` is **not deprecated** — it continues to be published to the same npm package, but its source has moved to the [viamrobotics/prime](https://github.com/viamrobotics/prime) monorepo (see [prime#640](https://github.com/viamrobotics/prime/pull/640)). File issues and PRs against `prime`.
 
 Shared configuration for JavaScript and TypeScript tools.
 
