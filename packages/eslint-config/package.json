@@ -27,13 +27,13 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@eslint/js": "~10.0.1",
-    "@typescript-eslint/utils": "~8.59.0",
-    "@vitest/eslint-plugin": "~1.6.16",
+    "@typescript-eslint/utils": "~8.59.2",
+    "@vitest/eslint-plugin": "~1.6.17",
     "eslint-config-prettier": "~10.1.8",
     "eslint-plugin-perfectionist": "^5.9.0",
     "eslint-plugin-unicorn": "~64.0.0",
-    "globals": "^17.5.0",
-    "typescript-eslint": "~8.59.0"
+    "globals": "^17.6.0",
+    "typescript-eslint": "~8.59.2"
   },
   "peerDependencies": {
     "eslint": ">=10 <11",
