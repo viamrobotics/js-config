@@ -6,6 +6,7 @@
   },
   "version": "2.0.0",
   "description": "Viam's shared Prettier configuration for Svelte projects.",
+  "deprecated": "This package is no longer maintained. The viamrobotics/js-config repository has been archived. Please set up your own Prettier configuration in your own repository going forward.",
   "type": "module",
   "types": "./dist/prettier-config-svelte.d.ts",
   "exports": {

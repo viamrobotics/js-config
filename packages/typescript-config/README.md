@@ -1,5 +1,8 @@
 # Shared TypeScript Config for Viam
 
+> [!WARNING]
+> **This package is deprecated and no longer maintained.** The [viamrobotics/js-config](https://github.com/viamrobotics/js-config) repository has been archived. Please set up your own TypeScript configuration in your own repository going forward.
+
 This module contains [Viam][]'s shared [TypeScript][] configurations for TypeScript v5.
 
 ```shell

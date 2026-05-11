@@ -1,5 +1,8 @@
 # Viam's Tailwind Config
 
+> [!IMPORTANT]
+> **Source has moved.** `@viamrobotics/tailwind-config` is still actively maintained on npm, but its source now lives in the [viamrobotics/prime](https://github.com/viamrobotics/prime) monorepo (see [prime#640](https://github.com/viamrobotics/prime/pull/640)). The copy in this archived repository is frozen — file issues and PRs against `prime`.
+
 This module contains [Viam][]'s shared [Tailwind CSS][] v4 configuration.
 
 [viam]: https://www.viam.com/

@@ -1,5 +1,8 @@
 # Viam's Prettier Config for Svelte
 
+> [!WARNING]
+> **This package is deprecated and no longer maintained.** The [viamrobotics/js-config](https://github.com/viamrobotics/js-config) repository has been archived. Please set up your own Prettier configuration in your own repository going forward.
+
 This module contains [Viam][]'s shared [Prettier][] configurations for Prettier v3 in [Svelte][] projects.
 
 [viam]: https://www.viam.com/

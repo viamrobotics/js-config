@@ -6,6 +6,7 @@
   },
   "version": "2.0.0",
   "description": "ESLint configuration for projects at Viam.",
+  "deprecated": "This package is no longer maintained. The viamrobotics/js-config repository has been archived. Please set up your own ESLint configuration in your own repository going forward.",
   "type": "module",
   "main": "./eslint-config.js",
   "types": "./dist/eslint-config.d.ts",
